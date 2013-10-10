@@ -47,7 +47,6 @@
   _highlightColor = [UIColor colorWithRed:1.0 green:0.8 blue:0.0 alpha:1.0];
   _numberOfStar = 5;
   _smoothEditing = YES;
-  _editable = NO;
   
   UITapGestureRecognizer *tapGestureRec =
     [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gestured:)];
@@ -143,9 +142,6 @@
 
 - (void)gestured:(UIPanGestureRecognizer *)sender
 {
-  if (_editable == NO) {
-    return;
-  }
   CGPoint location = [sender locationInView:self];
   float value = location.x / CGRectGetWidth(self.bounds) * _numberOfStar;
   if (_smoothEditing == NO) {

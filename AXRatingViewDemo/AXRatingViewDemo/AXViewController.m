@@ -30,9 +30,9 @@
   
   self.ratingView = [[AXRatingView alloc] initWithFrame:componentBounds];
   _ratingView.center = (CGPoint){CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds)};
-  _ratingView.editable = YES;
   _ratingView.smoothEditing = NO;
   _ratingView.value = initialValue;
+  _ratingView.userInteractionEnabled = YES; // if NO, just showing. default value is YES.
   [_ratingView addTarget:self action:@selector(ratingChanged:) forControlEvents:UIControlEventValueChanged];
   
   self.slider = [[UISlider alloc] initWithFrame:componentBounds];

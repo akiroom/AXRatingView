@@ -18,6 +18,5 @@
 @property (copy, nonatomic) UIColor *highlightColor;
 @property (nonatomic) float value;
 @property (nonatomic, getter = isSmoothEditing) BOOL smoothEditing;
-@property (nonatomic, getter = isEditable) BOOL editable;
 
 @end
