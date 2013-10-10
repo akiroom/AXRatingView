@@ -2,9 +2,6 @@
 //  AXViewController.m
 //  AXRatingViewDemo
 //
-//  Created by Hiroki Akiyama (office) on 2013/10/10.
-//  Copyright (c) 2013年 akiroom. All rights reserved.
-//
 
 #import "AXViewController.h"
 
@@ -41,7 +38,6 @@
   _slider.value = initialValue;
   _slider.center = (CGPoint){CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds) + padding};
   [_slider addTarget:self action:@selector(sliderChanged:) forControlEvents:UIControlEventValueChanged];
-  
   
   [self.view addSubview:_label];
   [self.view addSubview:_ratingView];
