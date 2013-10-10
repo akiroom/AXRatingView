@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
                    DESC
   s.homepage     = "https://github.com/akiroom/AXRatingView"
   s.screenshots  = "raw.github.com/akiroom/AXRatingView/master/AXRatingViewDemo/Screenshot.png"
-  s.license      = { :type => 'MIT', :file => 'LICENSE.txt' }
+  s.license      = { :type => 'MIT', :file => 'README.md' }
   s.author       = { "Hiroki Akiyama" => "aki-hiroki@nifty.com" }
   s.platform     = :ios
   s.source       = { :git => "https://github.com/akiroom/AXRatingView.git", :tag => "0.9" }
