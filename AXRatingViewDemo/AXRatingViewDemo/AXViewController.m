@@ -26,6 +26,8 @@
   _label.text = [NSString stringWithFormat:@"%f", initialValue];
   
   self.ratingView = [[AXRatingView alloc] initWithFrame:componentBounds];
+  _ratingView.markFont = [UIFont systemFontOfSize:32.0];
+  [_ratingView sizeToFit];
   _ratingView.center = (CGPoint){CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds)};
   _ratingView.smoothEditing = NO;
   _ratingView.value = initialValue;

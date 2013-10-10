@@ -38,6 +38,7 @@
 - (void)setupComponents
 {
   _markCharacter = @"★";
+  _markFont = [UIFont systemFontOfSize:16.0];
   _baseColor = [UIColor darkGrayColor];
   self.backgroundColor = _baseColor;
   _highlightColor = [UIColor colorWithRed:1.0 green:0.8 blue:0.0 alpha:1.0];
@@ -52,10 +53,11 @@
   [self addGestureRecognizer:swipeGestureRec];
 }
 
-- (void)setNeedsDisplay
+- (void)sizeToFit
 {
-  [super setNeedsDisplay];
-  
+//  [super sizeToFit];
+  [self setNeedsDisplay];
+  self.frame = (CGRect){self.frame.origin, self.markImage.size.width * _numberOfStar, self.markImage.size.height};
 }
 
 - (void)drawRect:(CGRect)rect
@@ -67,10 +69,31 @@
     [self.layer addSublayer:_highlightLayer];
   }
   
-  CGFloat selfWidth = CGRectGetWidth(self.bounds);
+  CGFloat selfWidth = (self.markImage.size.width * _numberOfStar);
   CGFloat selfHalfWidth = selfWidth / 2;
+  CGFloat selfHalfHeight = self.markImage.size.height / 2;
   CGFloat offsetX = selfWidth / _numberOfStar * (_numberOfStar - _value);
-  _highlightLayer.position = (CGPoint){selfHalfWidth - offsetX, CGRectGetMidY(self.bounds)};
+  _highlightLayer.position = (CGPoint){selfHalfWidth - offsetX, selfHalfHeight};
+}
+
+#pragma mark - Property
+
+- (UIImage *)markImage
+{
+  if (_markImage) {
+    return _markImage;
+  } else {
+    CGSize size =[_markCharacter sizeWithAttributes:@{NSFontAttributeName:_markFont}];
+    
+    UIGraphicsBeginImageContextWithOptions(size, NO, 2.0);
+    [[UIColor blackColor] set];
+    [_markCharacter drawAtPoint:CGPointZero
+                 withAttributes:@{NSFontAttributeName: _markFont,
+                                  NSForegroundColorAttributeName: [UIColor blackColor]}];
+    UIImage *markImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return _markImage = markImage;
+  }
 }
 
 - (void)setValue:(float)value
@@ -86,42 +109,42 @@
   [self setNeedsDisplay];
 }
 
-#pragma mark - Operations
-
-- (UIImage *)markImage
+- (void)setMarkFont:(UIFont *)markFont
 {
-  UIFont *font = [UIFont systemFontOfSize:32.0];
-  CGSize size =[_markCharacter sizeWithAttributes:@{NSFontAttributeName:font}];
-  
-  UIGraphicsBeginImageContextWithOptions(size, NO, 2.0);
-  [[UIColor blackColor] set];
-  [_markCharacter drawAtPoint:CGPointZero
-               withAttributes:@{NSFontAttributeName: font,
-                                NSForegroundColorAttributeName: [UIColor blackColor]}];
-  UIImage *markImage = UIGraphicsGetImageFromCurrentImageContext();
-  UIGraphicsEndImageContext();
-  return markImage;
+  _markFont = markFont;
+  _markImage = nil;
+  [self setNeedsDisplay];
 }
+
+- (void)setMarkCharacter:(NSString *)markCharacter
+{
+  _markCharacter = markCharacter;
+  _markImage = nil;
+  [self setNeedsDisplay];
+}
+
+
+#pragma mark - Operations
 
 - (CALayer *)generateMaskLayer
 {
   // Generate Mask Layer
-  UIImage *markImage = [self markImage];
-  CGFloat markWidth = markImage.size.width;
+  _markImage = [self markImage];
+  CGFloat markWidth = _markImage.size.width;
   CGFloat markHalfWidth = markWidth / 2;
-  CGFloat markHeight = markImage.size.height;
+  CGFloat markHeight = _markImage.size.height;
   CGFloat markHalfHeight = markHeight / 2;
   
   CALayer *starMaskLayer = [CALayer layer];
   starMaskLayer.opaque = NO;
   for (int i = 0; i < _numberOfStar; i++) {
     CALayer *starLayer = [CALayer layer];
-    starLayer.contents = (id)markImage.CGImage;
-    starLayer.bounds = (CGRect){CGPointZero, markImage.size};
+    starLayer.contents = (id)_markImage.CGImage;
+    starLayer.bounds = (CGRect){CGPointZero, _markImage.size};
     starLayer.position = (CGPoint){markHalfWidth + markWidth * i, markHalfHeight};
     [starMaskLayer addSublayer:starLayer];
   }
-  [starMaskLayer setFrame:(CGRect){CGPointZero, markImage.size.width * _numberOfStar, markImage.size.height}];
+  [starMaskLayer setFrame:(CGRect){CGPointZero, _markImage.size.width * _numberOfStar, _markImage.size.height}];
   return starMaskLayer;
 }
 
@@ -129,7 +152,7 @@
 {
   CALayer *highlightLayer = [CALayer layer];
   highlightLayer.backgroundColor = _highlightColor.CGColor;
-  highlightLayer.bounds = self.bounds;
+  highlightLayer.bounds = (CGRect){CGPointZero, _markImage.size.width * _numberOfStar, _markImage.size.height};
   highlightLayer.position = (CGPoint){CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds)};
   return highlightLayer;
 }
@@ -139,7 +162,7 @@
 - (void)gestured:(UIPanGestureRecognizer *)sender
 {
   CGPoint location = [sender locationInView:self];
-  float value = location.x / CGRectGetWidth(self.bounds) * _numberOfStar;
+  float value = location.x / (_markImage.size.width * _numberOfStar) * _numberOfStar;
   if (_smoothEditing == NO) {
     value = roundf(value);
   }
