@@ -44,13 +44,16 @@
   _markCharacter = @"★";
   _baseColor = [UIColor darkGrayColor];
   self.backgroundColor = _baseColor;
-  _highlightColor = [UIColor yellowColor];
+  _highlightColor = [UIColor colorWithRed:1.0 green:0.8 blue:0.0 alpha:1.0];
   _numberOfStar = 5;
   _smoothEditing = YES;
   _editable = NO;
   
+  UITapGestureRecognizer *tapGestureRec =
+    [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gestured:)];
   UIPanGestureRecognizer *swipeGestureRec =
     [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(gestured:)];
+  [self addGestureRecognizer:tapGestureRec];
   [self addGestureRecognizer:swipeGestureRec];
 }
 
