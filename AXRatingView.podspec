@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'MIT', :file => 'LICENSE.txt' }
   s.author       = { "Hiroki Akiyama" => "aki-hiroki@nifty.com" }
   s.platform     = :ios
-  s.source       = { :git => "https://github.com/akiroom/AXRatingView.git", :tag => "0.0.1" }
+  s.source       = { :git => "https://github.com/akiroom/AXRatingView.git", :tag => "0.9" }
   s.source_files  = 'AXRatingView', 'Classes/**/*.{h,m}'
   s.framework  = 'QuartzCore'
   s.requires_arc = true
