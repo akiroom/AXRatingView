@@ -20,8 +20,8 @@
 		75BB2075180636FA00BE8680 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BB2057180636FA00BE8680 /* UIKit.framework */; };
 		75BB207D180636FA00BE8680 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 75BB207B180636FA00BE8680 /* InfoPlist.strings */; };
 		75BB207F180636FA00BE8680 /* AXRatingViewDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 75BB207E180636FA00BE8680 /* AXRatingViewDemoTests.m */; };
-		75BB208E1806398A00BE8680 /* AXRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75BB208D1806398A00BE8680 /* AXRatingView.m */; };
 		75BB209018063AC200BE8680 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BB208F18063AC200BE8680 /* QuartzCore.framework */; };
+		7E0B5BE8D3D64CC3B5C47A06 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 24572433CE1545F8ACE868C3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		039F45FC697448789A761AC2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		24572433CE1545F8ACE868C3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		75BB2050180636FA00BE8680 /* AXRatingViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXRatingViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75BB2053180636FA00BE8680 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		75BB2055180636FA00BE8680 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,8 +55,6 @@
 		75BB207A180636FA00BE8680 /* AXRatingViewDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AXRatingViewDemoTests-Info.plist"; sourceTree = "<group>"; };
 		75BB207C180636FA00BE8680 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		75BB207E180636FA00BE8680 /* AXRatingViewDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXRatingViewDemoTests.m; sourceTree = "<group>"; };
-		75BB208C1806398A00BE8680 /* AXRatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AXRatingView.h; path = ../AXRatingView/AXRatingView.h; sourceTree = "<group>"; };
-		75BB208D1806398A00BE8680 /* AXRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AXRatingView.m; path = ../AXRatingView/AXRatingView.m; sourceTree = "<group>"; };
 		75BB208F18063AC200BE8680 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -67,6 +67,7 @@
 				75BB2056180636FA00BE8680 /* CoreGraphics.framework in Frameworks */,
 				75BB2058180636FA00BE8680 /* UIKit.framework in Frameworks */,
 				75BB2054180636FA00BE8680 /* Foundation.framework in Frameworks */,
+				7E0B5BE8D3D64CC3B5C47A06 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,11 +87,11 @@
 		75BB2047180636FA00BE8680 = {
 			isa = PBXGroup;
 			children = (
-				75BB208B1806380A00BE8680 /* AXRatingView */,
 				75BB2059180636FA00BE8680 /* AXRatingViewDemo */,
 				75BB2078180636FA00BE8680 /* AXRatingViewDemoTests */,
 				75BB2052180636FA00BE8680 /* Frameworks */,
 				75BB2051180636FA00BE8680 /* Products */,
+				039F45FC697448789A761AC2 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,6 +112,7 @@
 				75BB2055180636FA00BE8680 /* CoreGraphics.framework */,
 				75BB2057180636FA00BE8680 /* UIKit.framework */,
 				75BB2072180636FA00BE8680 /* XCTest.framework */,
+				24572433CE1545F8ACE868C3 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -157,15 +159,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		75BB208B1806380A00BE8680 /* AXRatingView */ = {
-			isa = PBXGroup;
-			children = (
-				75BB208C1806398A00BE8680 /* AXRatingView.h */,
-				75BB208D1806398A00BE8680 /* AXRatingView.m */,
-			);
-			name = AXRatingView;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -173,9 +166,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 75BB2082180636FA00BE8680 /* Build configuration list for PBXNativeTarget "AXRatingViewDemo" */;
 			buildPhases = (
+				0D97922D8D6D4402B8E3B9E1 /* Check Pods Manifest.lock */,
 				75BB204C180636FA00BE8680 /* Sources */,
 				75BB204D180636FA00BE8680 /* Frameworks */,
 				75BB204E180636FA00BE8680 /* Resources */,
+				4FA58AE8E7C94EAB8E4570C0 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -258,6 +253,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0D97922D8D6D4402B8E3B9E1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4FA58AE8E7C94EAB8E4570C0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		75BB204C180636FA00BE8680 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -265,7 +293,6 @@
 			files = (
 				75BB2060180636FA00BE8680 /* main.m in Sources */,
 				75BB206A180636FA00BE8680 /* AXViewController.m in Sources */,
-				75BB208E1806398A00BE8680 /* AXRatingView.m in Sources */,
 				75BB2064180636FA00BE8680 /* AXAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,6 +409,7 @@
 		};
 		75BB2083180636FA00BE8680 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 039F45FC697448789A761AC2 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -395,6 +423,7 @@
 		};
 		75BB2084180636FA00BE8680 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 039F45FC697448789A761AC2 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -467,6 +496,7 @@
 				75BB2084180636FA00BE8680 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		75BB2085180636FA00BE8680 /* Build configuration list for PBXNativeTarget "AXRatingViewDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +505,7 @@
 				75BB2087180636FA00BE8680 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

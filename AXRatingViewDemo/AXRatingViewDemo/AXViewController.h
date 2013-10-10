@@ -4,7 +4,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AXRatingView.h"
+#import "AXRatingView/AXRatingView.h"
 
 @interface AXViewController : UIViewController
 @property (strong ,nonatomic) UILabel *label;
