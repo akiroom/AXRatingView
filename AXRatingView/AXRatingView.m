@@ -10,7 +10,7 @@
 - (id)initWithFrame:(CGRect)frame
 {
   if (self = [super initWithFrame:frame]) {
-    _markCharacter = @"★";
+    _markCharacter = @"\u2605";
     _markFont = [UIFont systemFontOfSize:16.0];
     _baseColor = [UIColor darkGrayColor];
     self.backgroundColor = _baseColor;
