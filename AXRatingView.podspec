@@ -4,9 +4,10 @@ Pod::Spec.new do |s|
   s.summary      = "Star mark rating view"
   s.description  = <<-DESC
                    Star mark rating view for a review scene.
-                   - analog star (like 4.23)
-                   - digital star (like 4.00)
-                   - inherihence from UIControl
+                   - Smooth rating (like 4.22 -> 4.23)
+                   - Step rating (like 3.00 -> 4.00)
+                   - Editable & Not Editable
+                   - It is easy to Get/Set.
                    DESC
   s.homepage     = "https://github.com/akiroom/AXRatingView"
   s.screenshots  = "raw.github.com/akiroom/AXRatingView/master/AXRatingViewDemo/Screenshot.png"

@@ -2,8 +2,8 @@ AXRatingView
 ============
 
 Star mark rating view for a review scene.
-- Smooth rating (like 4.23)
-- Step rating (like 4.00)
+- Smooth rating (ex. 4.22 -> 4.23)
+- Step rating (ex. 3.00 -> 4.00)
 - Editable & Not Editable
 - It is easy to Get/Set.
 
