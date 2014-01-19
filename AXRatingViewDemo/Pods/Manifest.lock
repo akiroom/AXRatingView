@@ -1,0 +1,14 @@
+PODS:
+  - AXRatingView (0.91)
+
+DEPENDENCIES:
+  - AXRatingView (from `..`)
+
+EXTERNAL SOURCES:
+  AXRatingView:
+    :path: ..
+
+SPEC CHECKSUMS:
+  AXRatingView: d1da312424bc925c9941afd18c156756fdb9f93b
+
+COCOAPODS: 0.25.0

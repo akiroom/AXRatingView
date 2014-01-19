@@ -5,58 +5,25 @@
 #import "AXRatingView.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface AXRatingView()
-- (void)setupComponents;
-@end
-
 @implementation AXRatingView
-
-- (id)init
-{
-  if (self = [super init]) {
-    [self setupComponents];
-  }
-  return self;
-}
-
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-  if (self = [super initWithCoder:aDecoder]) {
-    [self setupComponents];
-  }
-  return self;
-}
 
 - (id)initWithFrame:(CGRect)frame
 {
   if (self = [super initWithFrame:frame]) {
-    [self setupComponents];
+    _markCharacter = @"\u2605";
+    _markFont = [UIFont systemFontOfSize:16.0];
+    _baseColor = [UIColor darkGrayColor];
+    self.backgroundColor = _baseColor;
+    _highlightColor = [UIColor colorWithRed:1.0 green:0.8 blue:0.0 alpha:1.0];
+    _numberOfStar = 5;
+    _smoothEditing = YES;
   }
   return self;
 }
 
-- (void)setupComponents
-{
-  _markCharacter = @"★";
-  _markFont = [UIFont systemFontOfSize:16.0];
-  _baseColor = [UIColor darkGrayColor];
-  self.backgroundColor = _baseColor;
-  _highlightColor = [UIColor colorWithRed:1.0 green:0.8 blue:0.0 alpha:1.0];
-  _numberOfStar = 5;
-  _smoothEditing = YES;
-  
-  UITapGestureRecognizer *tapGestureRec =
-    [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gestured:)];
-  UIPanGestureRecognizer *swipeGestureRec =
-    [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(gestured:)];
-  [self addGestureRecognizer:tapGestureRec];
-  [self addGestureRecognizer:swipeGestureRec];
-}
-
 - (void)sizeToFit
 {
-//  [super sizeToFit];
-  [self setNeedsDisplay];
+  [super sizeToFit];
   self.frame = (CGRect){self.frame.origin, self.markImage.size.width * _numberOfStar, self.markImage.size.height};
 }
 
@@ -100,6 +67,7 @@
 {
   _value = MIN(MAX(value, 0.0), _numberOfStar);
   [self setNeedsDisplay];
+  [self sendActionsForControlEvents:UIControlEventValueChanged];
 }
 
 - (void)setBaseColor:(UIColor *)baseColor
@@ -123,6 +91,11 @@
   [self setNeedsDisplay];
 }
 
+- (void)setNumberOfStar:(NSUInteger)numberOfStar
+{
+  _numberOfStar = numberOfStar;
+  [self setNeedsDisplay];
+}
 
 #pragma mark - Operations
 
@@ -157,17 +130,21 @@
   return highlightLayer;
 }
 
-#pragma mark - Action
+#pragma mark - Event
 
-- (void)gestured:(UIPanGestureRecognizer *)sender
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-  CGPoint location = [sender locationInView:self];
+  [self touchesMoved:touches withEvent:event];
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+  CGPoint location = [[touches anyObject] locationInView:self];
   float value = location.x / (_markImage.size.width * _numberOfStar) * _numberOfStar;
   if (_smoothEditing == NO) {
-    value = roundf(value);
+    value = ceilf(value);
   }
   [self setValue:value];
-  [self sendActionsForControlEvents:UIControlEventValueChanged];
 }
 
 @end
