@@ -164,7 +164,7 @@
   CGPoint location = [sender locationInView:self];
   float value = location.x / (_markImage.size.width * _numberOfStar) * _numberOfStar;
   if (_smoothEditing == NO) {
-    value = roundf(value);
+    value = ceilf(value);
   }
   [self setValue:value];
   [self sendActionsForControlEvents:UIControlEventValueChanged];
