@@ -95,7 +95,6 @@
   [self setNeedsDisplay];
 }
 
-
 #pragma mark - Operations
 
 - (CALayer *)generateMaskLayer
@@ -130,6 +129,11 @@
 }
 
 #pragma mark - Event
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+  [self touchesMoved:touches withEvent:event];
+}
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
