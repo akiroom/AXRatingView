@@ -5,10 +5,6 @@
 #import "AXRatingView.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface AXRatingView()
-
-@end
-
 @implementation AXRatingView
 
 - (id)initWithFrame:(CGRect)frame
@@ -92,6 +88,12 @@
 {
   _markCharacter = markCharacter;
   _markImage = nil;
+  [self setNeedsDisplay];
+}
+
+- (void)setNumberOfStar:(NSUInteger)numberOfStar
+{
+  _numberOfStar = numberOfStar;
   [self setNeedsDisplay];
 }
 
