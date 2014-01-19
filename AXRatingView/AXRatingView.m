@@ -6,51 +6,30 @@
 #import <QuartzCore/QuartzCore.h>
 
 @interface AXRatingView()
-- (void)setupComponents;
+
 @end
 
 @implementation AXRatingView
 
-- (id)init
-{
-  if (self = [super init]) {
-    [self setupComponents];
-  }
-  return self;
-}
-
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-  if (self = [super initWithCoder:aDecoder]) {
-    [self setupComponents];
-  }
-  return self;
-}
-
 - (id)initWithFrame:(CGRect)frame
 {
   if (self = [super initWithFrame:frame]) {
-    [self setupComponents];
+    _markCharacter = @"★";
+    _markFont = [UIFont systemFontOfSize:16.0];
+    _baseColor = [UIColor darkGrayColor];
+    self.backgroundColor = _baseColor;
+    _highlightColor = [UIColor colorWithRed:1.0 green:0.8 blue:0.0 alpha:1.0];
+    _numberOfStar = 5;
+    _smoothEditing = YES;
+    
+    UITapGestureRecognizer *tapGestureRec =
+    [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gestured:)];
+    UIPanGestureRecognizer *swipeGestureRec =
+    [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(gestured:)];
+    [self addGestureRecognizer:tapGestureRec];
+    [self addGestureRecognizer:swipeGestureRec];
   }
   return self;
-}
-
-- (void)setupComponents
-{
-  _markCharacter = @"★";
-  _markFont = [UIFont systemFontOfSize:16.0];
-  _baseColor = [UIColor darkGrayColor];
-  self.backgroundColor = _baseColor;
-  _highlightColor = [UIColor colorWithRed:1.0 green:0.8 blue:0.0 alpha:1.0];
-  _numberOfStar = 5;
-  _smoothEditing = YES;
-  
-  UITapGestureRecognizer *tapGestureRec =
-    [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gestured:)];
-  UIPanGestureRecognizer *swipeGestureRec =
-    [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(gestured:)];
-  [self addGestureRecognizer:tapGestureRec];
-  [self addGestureRecognizer:swipeGestureRec];
 }
 
 - (void)sizeToFit
