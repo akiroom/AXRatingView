@@ -55,7 +55,6 @@
 - (void)sliderChanged:(UISlider *)sender
 {
   [self.ratingView setValue:[sender value]];
-  [self.label setText:[NSString stringWithFormat:@"%f", sender.value]];
 }
 
 - (void)ratingChanged:(AXRatingView *)sender
