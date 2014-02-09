@@ -1,6 +1,8 @@
 AXRatingView
 ============
 
+[![Build Status](https://travis-ci.org/akiroom/AXRatingView.png?branch=master)](https://travis-ci.org/akiroom/AXRatingView)
+
 Star mark rating view for a review scene.
 - Smooth rating (ex. 4.22 -> 4.23)
 - Step rating by 1.0 (ex. 3.00 -> 4.00)
