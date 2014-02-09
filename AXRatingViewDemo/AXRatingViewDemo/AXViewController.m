@@ -23,20 +23,20 @@
     return CGRectOffset(componentBounds, 0.0, padding * ++positionCounter);
   };
 
-  // Smooth
+  // smooth
 
   UILabel *basicLabel = [[UILabel alloc] initWithFrame:nextFrame()];
-  basicLabel.text = @"Smooth";
+  basicLabel.text = @"smooth";
   [self.view addSubview:basicLabel];
 
   AXRatingView *basicRatingView = [[AXRatingView alloc] initWithFrame:nextFrame()];
   [basicRatingView sizeToFit];
   [self.view addSubview:basicRatingView];
 
-  // Step
+  // step
 
   UILabel *stepLabel = [[UILabel alloc] initWithFrame:nextFrame()];
-  stepLabel.text = @"Step";
+  stepLabel.text = @"step";
   [self.view addSubview:stepLabel];
 
   AXRatingView *stepRatingView = [[AXRatingView alloc] initWithFrame:nextFrame()];
@@ -44,10 +44,10 @@
   [stepRatingView setSmoothEditing:NO];
   [self.view addSubview:stepRatingView];
   
-  // Free character
+  // unicode character
   
   UILabel *freeCharacterLabel = [[UILabel alloc] initWithFrame:nextFrame()];
-  freeCharacterLabel.text = @"Free character";
+  freeCharacterLabel.text = @"unicode character";
   [self.view addSubview:freeCharacterLabel];
   
   AXRatingView *freeCharacterRatingView = [[AXRatingView alloc] initWithFrame:nextFrame()];
@@ -56,10 +56,10 @@
   [freeCharacterRatingView sizeToFit];
   [self.view addSubview:freeCharacterRatingView];
   
-  // Free image
+  // image
   
   UILabel *freeImageLabel = [[UILabel alloc] initWithFrame:nextFrame()];
-  freeImageLabel.text = @"Free image";
+  freeImageLabel.text = @"image";
   [self.view addSubview:freeImageLabel];
   
   AXRatingView *freeImageRatingView = [[AXRatingView alloc] initWithFrame:nextFrame()];
@@ -67,10 +67,22 @@
   [freeImageRatingView sizeToFit];
   [self.view addSubview:freeImageRatingView];
   
-  // Not editable
+  // color
+  
+  UILabel *setColorLabel = [[UILabel alloc] initWithFrame:nextFrame()];
+  setColorLabel.text = @"color";
+  [self.view addSubview:setColorLabel];
+  
+  AXRatingView *setColorRatingView = [[AXRatingView alloc] initWithFrame:nextFrame()];
+  [setColorRatingView sizeToFit];
+  [setColorRatingView setBaseColor:[UIColor orangeColor]];
+  [setColorRatingView setHighlightColor:[UIColor greenColor]];
+  [self.view addSubview:setColorRatingView];
+  
+  // not editable
   
   UILabel *notEditableLabel = [[UILabel alloc] initWithFrame:nextFrame()];
-  notEditableLabel.text = @"Not editable";
+  notEditableLabel.text = @"not editable";
   [self.view addSubview:notEditableLabel];
   
   AXRatingView *notEditableRatingView = [[AXRatingView alloc] initWithFrame:nextFrame()];
@@ -79,10 +91,10 @@
   [notEditableRatingView setValue:4.0];
   [self.view addSubview:notEditableRatingView];
   
-  // More stars
+  // more stars
   
   UILabel *moreStarsLabel = [[UILabel alloc] initWithFrame:nextFrame()];
-  moreStarsLabel.text = @"More stars";
+  moreStarsLabel.text = @"more stars";
   [self.view addSubview:moreStarsLabel];
   
   AXRatingView *moreStarsRatingView = [[AXRatingView alloc] initWithFrame:nextFrame()];
@@ -90,7 +102,7 @@
   [moreStarsRatingView sizeToFit];
   [self.view addSubview:moreStarsRatingView];
 
-  // Set and get
+  // set and get
 
   self.label = [[UILabel alloc] initWithFrame:nextFrame()];
   [self.view addSubview:_label];
@@ -98,7 +110,7 @@
   self.ratingView = [[AXRatingView alloc] initWithFrame:nextFrame()];
   _ratingView.smoothEditing = NO;
   _ratingView.value = 2.5;
-  _ratingView.userInteractionEnabled = YES; // if NO, just showing. default value is YES.
+  _ratingView.userInteractionEnabled = YES;
   [_ratingView addTarget:self action:@selector(ratingChanged:) forControlEvents:UIControlEventValueChanged];
   [_ratingView sizeToFit];
   [self.view addSubview:_ratingView];
