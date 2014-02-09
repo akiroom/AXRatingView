@@ -16,7 +16,7 @@
     self.backgroundColor = _baseColor;
     _highlightColor = [UIColor colorWithRed:1.0 green:0.8 blue:0.0 alpha:1.0];
     _numberOfStar = 5;
-    _smoothEditing = YES;
+    _stepInterval = 0.0;
   }
   return self;
 }
@@ -65,6 +65,11 @@
     UIGraphicsEndImageContext();
     return _markImage = markImage;
   }
+}
+
+- (void)setStepInterval:(float)stepInterval
+{
+  _stepInterval = MAX(stepInterval, 0.0);
 }
 
 - (void)setValue:(float)value
@@ -145,8 +150,8 @@
 {
   CGPoint location = [[touches anyObject] locationInView:self];
   float value = location.x / (_markImage.size.width * _numberOfStar) * _numberOfStar;
-  if (_smoothEditing == NO) {
-    value = ceilf(value);
+  if (_stepInterval != 0.0) {
+    value = roundf(value / _stepInterval) * _stepInterval;
   }
   [self setValue:value];
 }

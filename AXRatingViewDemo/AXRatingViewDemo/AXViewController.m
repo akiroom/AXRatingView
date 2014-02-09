@@ -32,17 +32,28 @@
   AXRatingView *basicRatingView = [[AXRatingView alloc] initWithFrame:nextFrame()];
   [basicRatingView sizeToFit];
   [self.view addSubview:basicRatingView];
-
+  
   // step
-
+  
   UILabel *stepLabel = [[UILabel alloc] initWithFrame:nextFrame()];
   stepLabel.text = @"step";
   [self.view addSubview:stepLabel];
-
+  
   AXRatingView *stepRatingView = [[AXRatingView alloc] initWithFrame:nextFrame()];
   [stepRatingView sizeToFit];
-  [stepRatingView setSmoothEditing:NO];
+  [stepRatingView setStepInterval:1.0];
   [self.view addSubview:stepRatingView];
+  
+  // half step
+  
+  UILabel *halfStepLabel = [[UILabel alloc] initWithFrame:nextFrame()];
+  halfStepLabel.text = @"half step";
+  [self.view addSubview:halfStepLabel];
+  
+  AXRatingView *halfStepRatingView = [[AXRatingView alloc] initWithFrame:nextFrame()];
+  [halfStepRatingView sizeToFit];
+  [halfStepRatingView setStepInterval:0.5];
+  [self.view addSubview:halfStepRatingView];
   
   // unicode character
   
@@ -108,7 +119,7 @@
   [self.view addSubview:_label];
   
   self.ratingView = [[AXRatingView alloc] initWithFrame:nextFrame()];
-  _ratingView.smoothEditing = NO;
+  _ratingView.stepInterval = 0.0;
   _ratingView.value = 2.5;
   _ratingView.userInteractionEnabled = YES;
   [_ratingView addTarget:self action:@selector(ratingChanged:) forControlEvents:UIControlEventValueChanged];

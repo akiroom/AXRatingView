@@ -16,6 +16,6 @@
 @property (strong, nonatomic) UIColor *baseColor;
 @property (strong, nonatomic) UIColor *highlightColor;
 @property (nonatomic) float value;
-@property (nonatomic, getter = isSmoothEditing) BOOL smoothEditing;
+@property (nonatomic) float stepInterval;
 
 @end
