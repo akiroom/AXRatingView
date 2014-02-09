@@ -11,12 +11,12 @@
 {
   if (self = [super initWithFrame:frame]) {
     _markCharacter = @"\u2605";
-    _markFont = [UIFont systemFontOfSize:16.0];
+    _markFont = [UIFont systemFontOfSize:22.0];
     _baseColor = [UIColor darkGrayColor];
     self.backgroundColor = _baseColor;
     _highlightColor = [UIColor colorWithRed:1.0 green:0.8 blue:0.0 alpha:1.0];
     _numberOfStar = 5;
-    _smoothEditing = YES;
+    _stepInterval = 0.0;
   }
   return self;
 }
@@ -40,7 +40,11 @@
   CGFloat selfHalfWidth = selfWidth / 2;
   CGFloat selfHalfHeight = self.markImage.size.height / 2;
   CGFloat offsetX = selfWidth / _numberOfStar * (_numberOfStar - _value);
+  [CATransaction begin];
+  [CATransaction setValue:(id)kCFBooleanTrue
+                   forKey:kCATransactionDisableActions];
   _highlightLayer.position = (CGPoint){selfHalfWidth - offsetX, selfHalfHeight};
+  [CATransaction commit];
 }
 
 #pragma mark - Property
@@ -61,6 +65,11 @@
     UIGraphicsEndImageContext();
     return _markImage = markImage;
   }
+}
+
+- (void)setStepInterval:(float)stepInterval
+{
+  _stepInterval = MAX(stepInterval, 0.0);
 }
 
 - (void)setValue:(float)value
@@ -141,8 +150,8 @@
 {
   CGPoint location = [[touches anyObject] locationInView:self];
   float value = location.x / (_markImage.size.width * _numberOfStar) * _numberOfStar;
-  if (_smoothEditing == NO) {
-    value = ceilf(value);
+  if (_stepInterval != 0.0) {
+    value = roundf(value / _stepInterval) * _stepInterval;
   }
   [self setValue:value];
 }
