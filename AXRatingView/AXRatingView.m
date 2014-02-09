@@ -40,7 +40,11 @@
   CGFloat selfHalfWidth = selfWidth / 2;
   CGFloat selfHalfHeight = self.markImage.size.height / 2;
   CGFloat offsetX = selfWidth / _numberOfStar * (_numberOfStar - _value);
+  [CATransaction begin];
+  [CATransaction setValue:(id)kCFBooleanTrue
+                   forKey:kCATransactionDisableActions];
   _highlightLayer.position = (CGPoint){selfHalfWidth - offsetX, selfHalfHeight};
+  [CATransaction commit];
 }
 
 #pragma mark - Property
