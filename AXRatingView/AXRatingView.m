@@ -11,7 +11,7 @@
 {
   if (self = [super initWithFrame:frame]) {
     _markCharacter = @"\u2605";
-    _markFont = [UIFont systemFontOfSize:16.0];
+    _markFont = [UIFont systemFontOfSize:22.0];
     _baseColor = [UIColor darkGrayColor];
     self.backgroundColor = _baseColor;
     _highlightColor = [UIColor colorWithRed:1.0 green:0.8 blue:0.0 alpha:1.0];

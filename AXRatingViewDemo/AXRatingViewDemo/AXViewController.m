@@ -143,7 +143,7 @@
 - (void)ratingChanged:(AXRatingView *)sender
 {
   [self.slider setValue:[sender value]];
-  [self.label setText:[NSString stringWithFormat:@"Set and Get Sample: %.2f", sender.value]];
+  [self.label setText:[NSString stringWithFormat:@"set and get: %.2f", sender.value]];
 }
 
 @end
