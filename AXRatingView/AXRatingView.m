@@ -170,7 +170,11 @@
     CGPoint location = [[touches anyObject] locationInView:self];
     float value = location.x / (_markImage.size.width * _numberOfStar) * _numberOfStar;
     if (_stepInterval != 0.0) {
-        value = roundf(value / _stepInterval) * _stepInterval;
+        if (_stepInterval == 1) {
+            value = ceilf(value / _stepInterval) * _stepInterval;
+        } else {
+            value = roundf(value / _stepInterval) * _stepInterval;
+        }
     }
     [self setValue:value];
 }
