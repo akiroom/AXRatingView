@@ -7,6 +7,8 @@
 
 @implementation AXRatingView
 
+#define TOTAL_WIDTH (self.markImage.size.width * _numberOfStar + _padding * (_numberOfStar-1))
+
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     if (self = [super initWithCoder:aDecoder]) {
@@ -38,7 +40,7 @@
 - (void)sizeToFit
 {
     [super sizeToFit];
-    self.frame = (CGRect){self.frame.origin, self.markImage.size.width * _numberOfStar, self.markImage.size.height};
+    self.frame = (CGRect){self.frame.origin, TOTAL_WIDTH, self.markImage.size.height};
 }
 
 - (void)drawRect:(CGRect)rect
@@ -50,7 +52,7 @@
         [self.layer addSublayer:_highlightLayer];
     }
     
-    CGFloat selfWidth = (self.markImage.size.width * _numberOfStar);
+    CGFloat selfWidth = TOTAL_WIDTH;
     CGFloat selfHalfWidth = selfWidth / 2;
     CGFloat selfHalfHeight = self.markImage.size.height / 2;
     CGFloat offsetX = selfWidth / _numberOfStar * (_numberOfStar - _value);
@@ -142,10 +144,10 @@
         CALayer *starLayer = [CALayer layer];
         starLayer.contents = (id)_markImage.CGImage;
         starLayer.bounds = (CGRect){CGPointZero, _markImage.size};
-        starLayer.position = (CGPoint){markHalfWidth + markWidth * i, markHalfHeight};
+        starLayer.position = (CGPoint){markHalfWidth + (markWidth + _padding) * i, markHalfHeight};
         [starMaskLayer addSublayer:starLayer];
     }
-    [starMaskLayer setFrame:(CGRect){CGPointZero, _markImage.size.width * _numberOfStar, _markImage.size.height}];
+    [starMaskLayer setFrame:(CGRect){CGPointZero, TOTAL_WIDTH, _markImage.size.height}];
     return starMaskLayer;
 }
 
@@ -153,7 +155,7 @@
 {
     CALayer *highlightLayer = [CALayer layer];
     highlightLayer.backgroundColor = _highlightColor.CGColor;
-    highlightLayer.bounds = (CGRect){CGPointZero, _markImage.size.width * _numberOfStar, _markImage.size.height};
+    highlightLayer.bounds = (CGRect){CGPointZero, TOTAL_WIDTH, _markImage.size.height};
     highlightLayer.position = (CGPoint){CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds)};
     return highlightLayer;
 }
@@ -168,7 +170,7 @@
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
     CGPoint location = [[touches anyObject] locationInView:self];
-    float value = location.x / (_markImage.size.width * _numberOfStar) * _numberOfStar;
+    float value = location.x / (TOTAL_WIDTH) * _numberOfStar;
     if (_stepInterval != 0.0) {
         if (_stepInterval == 1) {
             value = ceilf(value / _stepInterval) * _stepInterval;
