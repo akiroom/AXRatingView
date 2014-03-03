@@ -5,6 +5,10 @@
 #import "AXRatingView.h"
 #import <QuartzCore/QuartzCore.h>
 
+@interface AXRatingView()
+@property BOOL pendingNotification;
+@end
+
 @implementation AXRatingView
 
 #define TOTAL_WIDTH (self.markImage.size.width * _numberOfStar + _padding * (_numberOfStar-1))
@@ -19,6 +23,8 @@
         _highlightColor = [UIColor colorWithRed:1.0 green:0.8 blue:0.0 alpha:1.0];
         _numberOfStar = 5;
         _stepInterval = 0.0;
+        _padding = 0;
+        _notifyContinuously = YES;
     }
     return self;
 }
@@ -33,6 +39,8 @@
         _highlightColor = [UIColor colorWithRed:1.0 green:0.8 blue:0.0 alpha:1.0];
         _numberOfStar = 5;
         _stepInterval = 0.0;
+        _padding = 0;
+        _notifyContinuously = YES;
     }
     return self;
 }
@@ -88,6 +96,14 @@
     _stepInterval = MAX(stepInterval, 0.0);
 }
 
+- (void)notify
+{
+    if (self.pendingNotification) {
+        [self sendActionsForControlEvents:UIControlEventValueChanged];
+    }
+    self.pendingNotification = NO;
+}
+
 - (void)setValue:(float)value
 {
     value = MIN(MAX(value, 0.0), _numberOfStar);
@@ -97,7 +113,11 @@
     }
     _value = value;
     [self setNeedsDisplay];
-    [self sendActionsForControlEvents:UIControlEventValueChanged];
+    
+    self.pendingNotification = YES;
+    if (self.notifyContinuously) {
+        [self notify];
+    }
 }
 
 - (void)setBaseColor:(UIColor *)baseColor
@@ -180,5 +200,8 @@
     }
     [self setValue:value];
 }
-
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self notify];
+}
 @end

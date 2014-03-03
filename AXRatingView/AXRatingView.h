@@ -18,4 +18,5 @@
 @property (nonatomic) float value;
 @property (nonatomic) float stepInterval;
 @property (nonatomic) CGFloat padding;
+@property (nonatomic) BOOL notifyContinuously;
 @end
