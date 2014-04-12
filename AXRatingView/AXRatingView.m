@@ -7,9 +7,8 @@
 
 @implementation AXRatingView
 
-- (id)initWithFrame:(CGRect)frame
-{
-  if (self = [super initWithFrame:frame]) {
+- (void)_init {
+
     _markCharacter = @"\u2605";
     _markFont = [UIFont systemFontOfSize:22.0];
     _baseColor = [UIColor darkGrayColor];
@@ -17,9 +16,26 @@
     _highlightColor = [UIColor colorWithRed:1.0 green:0.8 blue:0.0 alpha:1.0];
     _numberOfStar = 5;
     _stepInterval = 0.0;
+}
+
+- (id)initWithFrame:(CGRect)frame
+{
+  if (self = [super initWithFrame:frame]) {
+      
+      [self _init];
   }
   return self;
 }
+
+- (id)initWithCoder:(NSCoder *)decoder
+{
+    if (self = [super initWithCoder:decoder]) {
+        
+        [self _init];
+    }
+    return self;
+}
+
 
 - (void)sizeToFit
 {
