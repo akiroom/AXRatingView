@@ -13,36 +13,30 @@
 
 #define TOTAL_WIDTH (self.markImage.size.width * _numberOfStar + _padding * (_numberOfStar-1))
 
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-    if (self = [super initWithCoder:aDecoder]) {
-        _markCharacter = @"\u2605";
-        _markFont = [UIFont systemFontOfSize:22.0];
-        _baseColor = [UIColor darkGrayColor];
-        self.backgroundColor = _baseColor;
-        _highlightColor = [UIColor colorWithRed:1.0 green:0.8 blue:0.0 alpha:1.0];
-        _numberOfStar = 5;
-        _stepInterval = 0.0;
-        _padding = 0;
-        _notifyContinuously = YES;
-    }
-    return self;
+- (void)axRatingViewInit {
+  _markCharacter = @"\u2605";
+  _markFont = [UIFont systemFontOfSize:22.0];
+  _baseColor = [UIColor darkGrayColor];
+  self.backgroundColor = _baseColor;
+  _highlightColor = [UIColor colorWithRed:1.0 green:0.8 blue:0.0 alpha:1.0];
+  _numberOfStar = 5;
+  _stepInterval = 0.0;
 }
 
 - (id)initWithFrame:(CGRect)frame
 {
-    if (self = [super initWithFrame:frame]) {
-        _markCharacter = @"\u2605";
-        _markFont = [UIFont systemFontOfSize:22.0];
-        _baseColor = [UIColor darkGrayColor];
-        self.backgroundColor = _baseColor;
-        _highlightColor = [UIColor colorWithRed:1.0 green:0.8 blue:0.0 alpha:1.0];
-        _numberOfStar = 5;
-        _stepInterval = 0.0;
-        _padding = 0;
-        _notifyContinuously = YES;
-    }
-    return self;
+  if (self = [super initWithFrame:frame]) {
+    [self axRatingViewInit];
+  }
+  return self;
+}
+
+- (id)initWithCoder:(NSCoder *)decoder
+{
+  if (self = [super initWithCoder:decoder]) {
+    [self axRatingViewInit];
+  }
+  return self;
 }
 
 - (void)sizeToFit
