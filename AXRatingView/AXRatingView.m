@@ -127,6 +127,19 @@
     [self setNeedsDisplay];
 }
 
+- (void)setMarkFontName:(NSString *)markFontName
+{
+    UIFont * font = [UIFont fontWithName:markFontName size:_markFont.pointSize];
+    if (font) {
+        self.markFont = font;
+    }
+}
+
+- (void)setMarkFontSize:(CGFloat)markFontSize
+{
+    self.markFont = [self.markFont fontWithSize:markFontSize];
+}
+
 - (void)setMarkFont:(UIFont *)markFont
 {
     _markFont = markFont;
