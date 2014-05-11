@@ -7,6 +7,11 @@
 
 @implementation AXViewController
 
+- (BOOL)prefersStatusBarHidden
+{
+  return YES;
+}
+
 - (void)viewDidLoad
 {
   [super viewDidLoad];
@@ -20,7 +25,7 @@
   __block NSUInteger positionCounter = 0;
   
   CGRect (^nextFrame)() = ^CGRect() {
-    return CGRectOffset(componentBounds, 0.0, padding * ++positionCounter);
+    return CGRectOffset(componentBounds, 0.0, padding * positionCounter++);
   };
 
   // smooth
