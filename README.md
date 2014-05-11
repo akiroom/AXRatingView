@@ -1,8 +1,8 @@
-AXRatingView
-============
+# AXRatingView
 
 [![Build Status](https://travis-ci.org/akiroom/AXRatingView.png?branch=master)](https://travis-ci.org/akiroom/AXRatingView)
 
+## About
 Star mark rating view for a review scene.
 - Smooth rating (ex. 4.22 -> 4.23)
 - Step rating by 1.0 (ex. 3.00 -> 4.00)
@@ -13,4 +13,11 @@ Star mark rating view for a review scene.
 - Editable & Not Editable
 - Easy to Get/Set.
 
-![screenshot](https://raw.github.com/akiroom/AXRatingView/master/AXRatingViewDemo/Screenshot.png)
+## Screenshots
+### iOS7
+
+![iOS7 Screenshot](https://raw.github.com/akiroom/AXRatingView/master/AXRatingViewDemo/Screenshot.png)
+
+### iOS6
+
+![iOS6 Screenshot](https://raw.github.com/akiroom/AXRatingView/master/AXRatingViewDemo/Screenshot-iOS6.png)
