@@ -77,13 +77,22 @@
     if (_markImage) {
         return _markImage;
     } else {
-        CGSize size =[_markCharacter sizeWithAttributes:@{NSFontAttributeName:_markFont}];
+    CGSize size;
+    if ([_markCharacter respondsToSelector:@selector(sizeWithAttributes:)]) {
+      size = [_markCharacter sizeWithAttributes:@{NSFontAttributeName:_markFont}];
+    } else {
+      size = [_markCharacter sizeWithFont:_markFont];
+    }
         
         UIGraphicsBeginImageContextWithOptions(size, NO, 2.0);
         [[UIColor blackColor] set];
+    if ([_markCharacter respondsToSelector:@selector(drawAtPoint:withAttributes:)]) {
         [_markCharacter drawAtPoint:CGPointZero
                      withAttributes:@{NSFontAttributeName: _markFont,
                                       NSForegroundColorAttributeName: [UIColor blackColor]}];
+    } else {
+      [_markCharacter drawAtPoint:CGPointZero withFont:_markFont];
+    }
         UIImage *markImage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         return _markImage = markImage;
