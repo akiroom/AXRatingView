@@ -45,6 +45,7 @@
   [self.view addSubview:stepLabel];
   
   AXRatingView *stepRatingView = [[AXRatingView alloc] initWithFrame:nextFrame()];
+    stepRatingView.padding = 10;
   [stepRatingView sizeToFit];
   [stepRatingView setStepInterval:1.0];
   [self.view addSubview:stepRatingView];
