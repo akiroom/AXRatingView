@@ -22,3 +22,10 @@ Star mark rating view for a review scene.
 ### iOS6
 
 ![iOS6 Screenshot](https://raw.github.com/akiroom/AXRatingView/master/AXRatingViewDemo/Screenshot-iOS6.png)
+
+# Development
+
+We use this Objective-C coding styles.
+
+- https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html
+- http://google-styleguide.googlecode.com/svn/trunk/objcguide.xml
