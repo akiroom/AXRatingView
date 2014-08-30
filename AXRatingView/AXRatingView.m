@@ -35,11 +35,16 @@
 
 - (void)sizeToFit
 {
-  [super sizeToFit];
-  self.frame = (CGRect){
-    self.frame.origin, self.markImage.size.width * _numberOfStar,
-    self.markImage.size.height
-  };
+    [super sizeToFit];
+    self.frame = (CGRect) {
+        self.frame.origin, self.intrinsicContentSize
+    };
+}
+
+- (CGSize)intrinsicContentSize
+{
+    return CGSizeMake(self.markImage.size.width * _numberOfStar,
+                      self.markImage.size.height);
 }
 
 - (void)drawRect:(CGRect)rect
