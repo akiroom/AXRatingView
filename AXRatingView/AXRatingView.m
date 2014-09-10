@@ -78,7 +78,10 @@
     if ([_markCharacter respondsToSelector:@selector(sizeWithAttributes:)]) {
       size = [_markCharacter sizeWithAttributes:@{NSFontAttributeName:_markFont}];
     } else {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
       size = [_markCharacter sizeWithFont:_markFont];
+#pragma clang diagnostic pop
     }
     
     UIGraphicsBeginImageContextWithOptions(size, NO, 2.0);
@@ -88,7 +91,10 @@
                    withAttributes:@{NSFontAttributeName: _markFont,
                                     NSForegroundColorAttributeName: [UIColor blackColor]}];
     } else {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
       [_markCharacter drawAtPoint:CGPointZero withFont:_markFont];
+#pragma clang diagnostic pop
     }
     UIImage *markImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
