@@ -121,6 +121,15 @@
   [self setNeedsDisplay];
 }
 
+- (void)setHighlightColor:(UIColor *)highlightColor
+{
+	_highlightColor = highlightColor;
+	[_highlightLayer removeFromSuperlayer];
+	[_starMaskLayer removeFromSuperlayer];
+	_highlightLayer = nil;
+	_starMaskLayer = nil;
+}
+
 - (void)setMarkFont:(UIFont *)markFont
 {
   _markFont = markFont;
