@@ -29,7 +29,7 @@ Star mark rating view for a review scene.
 
 # Development
 
-We use this Objective-C coding styles.
+This repositry is under these Objective-C coding styles.
 
 - https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html
 - http://google-styleguide.googlecode.com/svn/trunk/objcguide.xml
