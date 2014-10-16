@@ -111,47 +111,60 @@
 
 - (void)setValue:(float)value
 {
-  _value = MIN(MAX(value, 0.0), _numberOfStar);
-  [self setNeedsDisplay];
+  if (_value != value) {
+    _value = MIN(MAX(value, 0.0), _numberOfStar);
+    [self setNeedsDisplay];
+  }
 }
 
 - (void)setBaseColor:(UIColor *)baseColor
 {
-  _baseColor = baseColor;
-  self.backgroundColor = _baseColor;
-  [self setNeedsDisplay];
+  if (_baseColor != baseColor) {
+    _baseColor = baseColor;
+    self.backgroundColor = _baseColor;
+    [self setNeedsDisplay];
+  }
 }
 
 - (void)setHighlightColor:(UIColor *)highlightColor
 {
-  _highlightColor = highlightColor;
-  [_highlightLayer removeFromSuperlayer];
-  [_starMaskLayer removeFromSuperlayer];
-  _highlightLayer = nil;
-  _starMaskLayer = nil;
+  if (_highlightColor != highlightColor) {
+    _highlightColor = highlightColor;
+    [_highlightLayer removeFromSuperlayer];
+    [_starMaskLayer removeFromSuperlayer];
+    _highlightLayer = nil;
+    _starMaskLayer = nil;
+    [self setNeedsDisplay];
+  }
 }
 
 - (void)setMarkFont:(UIFont *)markFont
 {
-  _markFont = markFont;
-  _markImage = nil;
-  [self setNeedsDisplay];
+  if (_markFont != markFont) {
+    _markFont = markFont;
+    _markImage = nil;
+    [self setNeedsDisplay];
+  }
 }
 
 - (void)setMarkCharacter:(NSString *)markCharacter
 {
-  _markCharacter = markCharacter;
-  _markImage = nil;
-  [self setNeedsDisplay];
+  if (_markCharacter != markCharacter) {
+    _markCharacter = markCharacter;
+    _markImage = nil;
+    [self setNeedsDisplay];
+  }
 }
 
 - (void)setNumberOfStar:(NSUInteger)numberOfStar
 {
-  _numberOfStar = numberOfStar;
-  [self setNeedsDisplay];
+  if (_numberOfStar != numberOfStar) {
+    _numberOfStar = numberOfStar;
+    [self setNeedsDisplay];
+  }
 }
 
-#pragma mark - Operations
+#pragma mark - Operation
 
 - (CALayer *)generateMaskLayer
 {
