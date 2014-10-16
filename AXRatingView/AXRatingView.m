@@ -111,7 +111,6 @@
 {
   _value = MIN(MAX(value, 0.0), _numberOfStar);
   [self setNeedsDisplay];
-  [self sendActionsForControlEvents:UIControlEventValueChanged];
 }
 
 - (void)setBaseColor:(UIColor *)baseColor
@@ -198,6 +197,7 @@
     value = ceilf(value / _stepInterval) * _stepInterval;
   }
   [self setValue:value];
+  [self sendActionsForControlEvents:UIControlEventValueChanged];
 }
 
 @end
