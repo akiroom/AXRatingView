@@ -35,16 +35,18 @@
 
 - (void)sizeToFit
 {
-    [super sizeToFit];
-    self.frame = (CGRect) {
-        self.frame.origin, self.intrinsicContentSize
-    };
+  [super sizeToFit];
+  self.frame = (CGRect) {
+    self.frame.origin, self.intrinsicContentSize
+  };
 }
 
 - (CGSize)intrinsicContentSize
 {
-    return CGSizeMake(self.markImage.size.width * _numberOfStar,
-                      self.markImage.size.height);
+  return (CGSize){
+    self.markImage.size.width * _numberOfStar,
+    self.markImage.size.height
+  };
 }
 
 - (void)drawRect:(CGRect)rect
@@ -122,11 +124,11 @@
 
 - (void)setHighlightColor:(UIColor *)highlightColor
 {
-	_highlightColor = highlightColor;
-	[_highlightLayer removeFromSuperlayer];
-	[_starMaskLayer removeFromSuperlayer];
-	_highlightLayer = nil;
-	_starMaskLayer = nil;
+  _highlightColor = highlightColor;
+  [_highlightLayer removeFromSuperlayer];
+  [_starMaskLayer removeFromSuperlayer];
+  _highlightLayer = nil;
+  _starMaskLayer = nil;
 }
 
 - (void)setMarkFont:(UIFont *)markFont

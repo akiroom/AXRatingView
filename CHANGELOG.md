@@ -1,6 +1,10 @@
 CHANGELOG
 ---------
 
+## 1.0.0
+
+- UIControlEventValueChanged is triggered on control changing
+
 ## 0.9.9
 
 - change selection rounding ```round``` to ```ceil```

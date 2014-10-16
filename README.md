@@ -2,6 +2,10 @@
 
 [![Build Status](https://travis-ci.org/akiroom/AXRatingView.png?branch=master)](https://travis-ci.org/akiroom/AXRatingView)
 
+- __Backward Compatibility Information__
+  - 0.x.x -> 1.x.x
+    - UIControlEventValueChanged is triggered on control changing (See [#13](https://github.com/akiroom/AXRatingView/pull/13/))
+
 ## About
 Star mark rating view for a review scene.
 - Smooth rating (ex. 4.22 -> 4.23)
