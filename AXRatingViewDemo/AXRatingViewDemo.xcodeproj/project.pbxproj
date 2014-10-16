@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7593196519EFC2B600506F80 /* AXMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7593196419EFC2B600506F80 /* AXMenuViewController.m */; };
+		7593196A19EFC3E000506F80 /* AXOnTheCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7593196919EFC3E000506F80 /* AXOnTheCellViewController.m */; };
 		75BB2054180636FA00BE8680 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BB2053180636FA00BE8680 /* Foundation.framework */; };
 		75BB2056180636FA00BE8680 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BB2055180636FA00BE8680 /* CoreGraphics.framework */; };
 		75BB2058180636FA00BE8680 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BB2057180636FA00BE8680 /* UIKit.framework */; };
 		75BB205E180636FA00BE8680 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 75BB205C180636FA00BE8680 /* InfoPlist.strings */; };
 		75BB2060180636FA00BE8680 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 75BB205F180636FA00BE8680 /* main.m */; };
 		75BB2064180636FA00BE8680 /* AXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 75BB2063180636FA00BE8680 /* AXAppDelegate.m */; };
-		75BB206A180636FA00BE8680 /* AXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75BB2069180636FA00BE8680 /* AXViewController.m */; };
+		75BB206A180636FA00BE8680 /* AXPropertiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75BB2069180636FA00BE8680 /* AXPropertiesViewController.m */; };
 		75BB206C180636FA00BE8680 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75BB206B180636FA00BE8680 /* Images.xcassets */; };
 		75BB2073180636FA00BE8680 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BB2072180636FA00BE8680 /* XCTest.framework */; };
 		75BB2074180636FA00BE8680 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BB2053180636FA00BE8680 /* Foundation.framework */; };
@@ -37,6 +39,10 @@
 /* Begin PBXFileReference section */
 		039F45FC697448789A761AC2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		24572433CE1545F8ACE868C3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7593196319EFC2B600506F80 /* AXMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXMenuViewController.h; sourceTree = "<group>"; };
+		7593196419EFC2B600506F80 /* AXMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXMenuViewController.m; sourceTree = "<group>"; };
+		7593196819EFC3E000506F80 /* AXOnTheCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXOnTheCellViewController.h; sourceTree = "<group>"; };
+		7593196919EFC3E000506F80 /* AXOnTheCellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXOnTheCellViewController.m; sourceTree = "<group>"; };
 		75BB2050180636FA00BE8680 /* AXRatingViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXRatingViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75BB2053180636FA00BE8680 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		75BB2055180636FA00BE8680 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -47,8 +53,8 @@
 		75BB2061180636FA00BE8680 /* AXRatingViewDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AXRatingViewDemo-Prefix.pch"; sourceTree = "<group>"; };
 		75BB2062180636FA00BE8680 /* AXAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXAppDelegate.h; sourceTree = "<group>"; };
 		75BB2063180636FA00BE8680 /* AXAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXAppDelegate.m; sourceTree = "<group>"; };
-		75BB2068180636FA00BE8680 /* AXViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXViewController.h; sourceTree = "<group>"; };
-		75BB2069180636FA00BE8680 /* AXViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXViewController.m; sourceTree = "<group>"; };
+		75BB2068180636FA00BE8680 /* AXPropertiesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXPropertiesViewController.h; sourceTree = "<group>"; };
+		75BB2069180636FA00BE8680 /* AXPropertiesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXPropertiesViewController.m; sourceTree = "<group>"; };
 		75BB206B180636FA00BE8680 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		75BB2071180636FA00BE8680 /* AXRatingViewDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AXRatingViewDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		75BB2072180636FA00BE8680 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -84,6 +90,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7593196619EFC2B900506F80 /* MenuViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7593196319EFC2B600506F80 /* AXMenuViewController.h */,
+				7593196419EFC2B600506F80 /* AXMenuViewController.m */,
+			);
+			name = MenuViewController;
+			sourceTree = "<group>";
+		};
+		7593196719EFC3C100506F80 /* OnTheCellViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7593196819EFC3E000506F80 /* AXOnTheCellViewController.h */,
+				7593196919EFC3E000506F80 /* AXOnTheCellViewController.m */,
+			);
+			name = OnTheCellViewController;
+			sourceTree = "<group>";
+		};
+		7593196B19EFC42100506F80 /* PropertiesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				75BB2068180636FA00BE8680 /* AXPropertiesViewController.h */,
+				75BB2069180636FA00BE8680 /* AXPropertiesViewController.m */,
+			);
+			name = PropertiesViewController;
+			sourceTree = "<group>";
+		};
 		75BB2047180636FA00BE8680 = {
 			isa = PBXGroup;
 			children = (
@@ -120,10 +153,11 @@
 		75BB2059180636FA00BE8680 /* AXRatingViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				7593196619EFC2B900506F80 /* MenuViewController */,
+				7593196B19EFC42100506F80 /* PropertiesViewController */,
+				7593196719EFC3C100506F80 /* OnTheCellViewController */,
 				75BB2062180636FA00BE8680 /* AXAppDelegate.h */,
 				75BB2063180636FA00BE8680 /* AXAppDelegate.m */,
-				75BB2068180636FA00BE8680 /* AXViewController.h */,
-				75BB2069180636FA00BE8680 /* AXViewController.m */,
 				75BB206B180636FA00BE8680 /* Images.xcassets */,
 				75BB205A180636FA00BE8680 /* Supporting Files */,
 			);
@@ -292,7 +326,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				75BB2060180636FA00BE8680 /* main.m in Sources */,
-				75BB206A180636FA00BE8680 /* AXViewController.m in Sources */,
+				7593196A19EFC3E000506F80 /* AXOnTheCellViewController.m in Sources */,
+				75BB206A180636FA00BE8680 /* AXPropertiesViewController.m in Sources */,
+				7593196519EFC2B600506F80 /* AXMenuViewController.m in Sources */,
 				75BB2064180636FA00BE8680 /* AXAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

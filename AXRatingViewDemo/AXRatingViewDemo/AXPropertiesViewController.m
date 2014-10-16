@@ -1,25 +1,25 @@
 //
-//  AXViewController.m
+//  AXPropertiesViewController.m
 //  AXRatingViewDemo
 //
 
-#import "AXViewController.h"
+#import "AXPropertiesViewController.h"
 
-@implementation AXViewController {
+@implementation AXPropertiesViewController {
   AXRatingView *_setColorRatingView;
-}
-
-- (BOOL)prefersStatusBarHidden
-{
-  return YES;
 }
 
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+  self.title = @"Properties";
   self.view.backgroundColor = [UIColor whiteColor];
   
-  CGFloat padding = 28.0;
+  if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+  }
+
+  CGFloat padding = 24.0;
   CGRect componentBounds = (CGRect){
     padding, 0.0,
     CGRectGetWidth(self.view.bounds) - padding * 2, 32.0

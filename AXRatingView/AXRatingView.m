@@ -164,6 +164,15 @@
   }
 }
 
+- (void)setBackgroundColor:(UIColor *)backgroundColor
+{
+  if (self.backgroundColor != backgroundColor) {
+    if (_baseColor != self.backgroundColor) {
+      [super setBackgroundColor:backgroundColor];
+    }
+  }
+}
+
 #pragma mark - Operation
 
 - (CALayer *)generateMaskLayer

@@ -4,15 +4,17 @@
 //
 
 #import "AXAppDelegate.h"
-#import "AXViewController.h"
+#import "AXMenuViewController.h"
 
 @implementation AXAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-  AXViewController *viewController = [[AXViewController alloc] init];
-  self.window.rootViewController = viewController;
+  
+  AXMenuViewController *menuViewCon = [[AXMenuViewController alloc] init];
+  UINavigationController *navCon = [[UINavigationController alloc] initWithRootViewController:menuViewCon];
+  self.window.rootViewController = navCon;
   [self.window makeKeyAndVisible];
   return YES;
 }

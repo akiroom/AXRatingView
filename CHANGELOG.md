@@ -1,6 +1,11 @@
 CHANGELOG
 ---------
 
+## 1.0.2
+
+- Bug fix: The star base layer on UITableViewCell disappers when the cell is selected.
+- Add the sample, "on the UITableViewCell"
+
 ## 1.0.1
 
 - call setNeedsDisplay at setHighlightColor:
