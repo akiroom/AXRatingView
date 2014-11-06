@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "AXRatingView"
-  s.version      = "1.0.2"
+  s.version      = "1.0.3"
   s.summary      = "Star mark rating view"
   s.description  = <<-DESC
                    Star mark rating view for a review scene.
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
                    - Set color
                    - Editable & Not Editable
                    - Easy to Get/Set.
-                   - Compatibility for iOS6, iOS7
+                   - Compatibility for iOS6, iOS7, iOS8
                    DESC
   s.homepage     = "https://github.com/akiroom/AXRatingView"
   s.screenshots  = "https://raw.github.com/akiroom/AXRatingView/master/AXRatingViewDemo/Screenshot.png"

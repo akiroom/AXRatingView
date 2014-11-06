@@ -1,6 +1,10 @@
 CHANGELOG
 ---------
 
+## 1.0.3
+
+- Add ```minimumValue``` property. (#15)
+
 ## 1.0.2
 
 - FIX #14: The star base layer on UITableViewCell disappers when the cell is selected.

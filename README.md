@@ -16,7 +16,7 @@ Star mark rating view for a review scene.
 - Set color
 - Editable & Not Editable
 - Easy to Get/Set.
-- Compatibility for iOS6, iOS7
+- Compatibility for iOS6, iOS7, iOS8
 
 ## Screenshots
 ### iOS7
