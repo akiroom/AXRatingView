@@ -118,7 +118,19 @@
   [notEditableRatingView setUserInteractionEnabled:NO];
   [notEditableRatingView setValue:4.0];
   [self.view addSubview:notEditableRatingView];
-  
+
+  // minimum value
+
+  UILabel *minValueLabel = [[UILabel alloc] initWithFrame:nextFrame()];
+  minValueLabel.text = @"minimum value (no less than 2.0)";
+  [self.view addSubview:minValueLabel];
+
+  AXRatingView *minValueRatingView = [[AXRatingView alloc] initWithFrame:nextFrame()];
+  [minValueRatingView sizeToFit];
+  [minValueRatingView setValue:4.0f];
+  [minValueRatingView setMinimumValue:2.0f];
+  [self.view addSubview:minValueRatingView];
+
   // more stars
   
   UILabel *moreStarsLabel = [[UILabel alloc] initWithFrame:nextFrame()];

@@ -15,6 +15,7 @@
   _highlightColor = [UIColor colorWithRed:1.0 green:0.8 blue:0.0 alpha:1.0];
   _numberOfStar = 5;
   _stepInterval = 0.0;
+  _minimumValue = 0.0;
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -218,7 +219,9 @@
   CGPoint location = [[touches anyObject] locationInView:self];
   float value = location.x / (_markImage.size.width * _numberOfStar) * _numberOfStar;
   if (_stepInterval != 0.0) {
-    value = ceilf(value / _stepInterval) * _stepInterval;
+    value = MAX(_minimumValue, ceilf(value / _stepInterval) * _stepInterval);
+  } else {
+    value = MAX(_minimumValue, value);
   }
   [self setValue:value];
   [self sendActionsForControlEvents:UIControlEventValueChanged];

@@ -17,5 +17,6 @@
 @property (strong, nonatomic) UIColor *highlightColor;
 @property (nonatomic) float value;
 @property (nonatomic) float stepInterval;
+@property (nonatomic) float minimumValue;
 
 @end
