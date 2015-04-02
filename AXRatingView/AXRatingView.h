@@ -13,7 +13,6 @@
 @property (copy, nonatomic) NSString *markCharacter;
 @property (strong, nonatomic) UIFont *markFont;
 @property (nonatomic, assign) CGFloat markFontSize;
-@property (nonatomic, assign) NSString * markImageNamed;
 @property (nonatomic, assign) NSString * markFontName;
 @property (strong, nonatomic) UIImage *markImage;
 @property (strong, nonatomic) UIColor *baseColor;

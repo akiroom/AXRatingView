@@ -74,11 +74,6 @@
 
 #pragma mark - Property
 
-- (void)setMarkImageNamed:(NSString*)markImageNamed
-{
-  [self setMarkImage:[UIImage imageNamed:markImageNamed]];
-}
-
 - (UIImage *)markImage
 {
   if (_markImage) {
