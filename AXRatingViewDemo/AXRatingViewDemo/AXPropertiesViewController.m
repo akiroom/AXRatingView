@@ -19,7 +19,7 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
   }
 
-  CGFloat padding = 24.0;
+  CGFloat padding = 22.0;
   CGRect componentBounds = (CGRect){
     padding, 0.0,
     CGRectGetWidth(self.view.bounds) - padding * 2, 32.0
@@ -142,6 +142,19 @@
   [moreStarsRatingView setNumberOfStar:12];
   [moreStarsRatingView sizeToFit];
   [self.view addSubview:moreStarsRatingView];
+    
+    
+  // more stars
+
+  UILabel *paddingLabel = [[UILabel alloc] initWithFrame:nextFrame()];
+  paddingLabel.text = @"padding";
+  [self.view addSubview:paddingLabel];
+
+  AXRatingView *paddingRatingView = [[AXRatingView alloc] initWithFrame:nextFrame()];
+  [paddingRatingView setNumberOfStar:5];
+  [paddingRatingView setPadding:10];
+  [paddingRatingView sizeToFit];
+  [self.view addSubview:paddingRatingView];
 
   // set and get
 
