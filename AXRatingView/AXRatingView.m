@@ -20,7 +20,8 @@
   _numberOfStar = 5;
   _stepInterval = 0.0;
   _minimumValue = 0.0;
-  [self addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)]];
+  [self addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)]];
+  [self addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)]];
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -229,21 +230,30 @@
 }
 
 #pragma mark - Event
-- (void)handlePanGesture:(UIPanGestureRecognizer*)gesture
+- (void)_updateValueWithLocation:(CGPoint)location
 {
-  if (gesture.state == UIGestureRecognizerStateBegan || gesture.state == UIGestureRecognizerStateChanged) {
-    CGPoint location = [gesture locationInView:self];
-    float value = location.x / (self.intrinsicContentSize.width) * _numberOfStar;
-    if (_stepInterval != 0.0) {
-      if (_stepInterval == 1) {
-        value = ceilf(value / _stepInterval) * _stepInterval;
-      } else {
-        value = roundf(value / _stepInterval) * _stepInterval;
-      }
+  float value = location.x / (self.intrinsicContentSize.width) * _numberOfStar;
+  if (_stepInterval != 0.0) {
+    if (_stepInterval == 1) {
+      value = ceilf(value / _stepInterval) * _stepInterval;
+    } else {
+      value = roundf(value / _stepInterval) * _stepInterval;
     }
-    /* setValue will handle min/max edge cases */
-    [self setValue:value];
-  } else if (gesture.state == UIGestureRecognizerStateEnded) {
+  }
+  /* setValue will handle min/max edge cases */
+  [self setValue:value];
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self _updateValueWithLocation:[touches.anyObject locationInView:self]];
+}
+
+- (void)handleGesture:(UITapGestureRecognizer*)gesture
+{
+  [self _updateValueWithLocation:[gesture locationInView:self]];
+    
+  if (gesture.state == UIGestureRecognizerStateEnded) {
     [self notify];
   }
 }
