@@ -5,6 +5,10 @@
 #import "AXRatingView.h"
 #import <QuartzCore/QuartzCore.h>
 
+@interface AXRatingView()
+@property BOOL pendingNotification;
+@end
+
 @implementation AXRatingView
 
 - (void)axRatingViewInit {
@@ -16,6 +20,8 @@
   _numberOfStar = 5;
   _stepInterval = 0.0;
   _minimumValue = 0.0;
+  [self addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)]];
+  [self addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)]];
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -44,10 +50,8 @@
 
 - (CGSize)intrinsicContentSize
 {
-  return (CGSize){
-    self.markImage.size.width * _numberOfStar,
-    self.markImage.size.height
-  };
+  return CGSizeMake(self.markImage.size.width * _numberOfStar + _padding * (_numberOfStar-1),
+                    self.markImage.size.height);
 }
 
 - (void)drawRect:(CGRect)rect
@@ -59,7 +63,7 @@
     [self.layer addSublayer:_highlightLayer];
   }
   
-  CGFloat selfWidth = (self.markImage.size.width * _numberOfStar);
+  CGFloat selfWidth = self.intrinsicContentSize.width;
   CGFloat selfHalfWidth = selfWidth / 2;
   CGFloat selfHalfHeight = self.markImage.size.height / 2;
   CGFloat offsetX = selfWidth / _numberOfStar * (_numberOfStar - _value);
@@ -110,11 +114,29 @@
   _stepInterval = MAX(stepInterval, 0.0);
 }
 
+- (void)notify
+{
+  /* We only want to trigger events when it's the right time */
+  if (self.pendingNotification) {
+    [self sendActionsForControlEvents:UIControlEventValueChanged];
+  }
+  self.pendingNotification = NO;
+}
+
 - (void)setValue:(float)value
 {
-  if (_value != value) {
-    _value = MIN(MAX(value, 0.0), _numberOfStar);
-    [self setNeedsDisplay];
+  value = MIN(MAX(value, _minimumValue), _numberOfStar);
+
+  if (value == _value) {
+    return;
+  }
+  _value = value;
+  [self setNeedsDisplay];
+
+  /* There is new values */
+  self.pendingNotification = YES;
+  if (self.notifyContinuously) {
+    [self notify];
   }
 }
 
@@ -191,10 +213,10 @@
     CALayer *starLayer = [CALayer layer];
     starLayer.contents = (id)_markImage.CGImage;
     starLayer.bounds = (CGRect){CGPointZero, _markImage.size};
-    starLayer.position = (CGPoint){markHalfWidth + markWidth * i, markHalfHeight};
+    starLayer.position = (CGPoint){markHalfWidth + (markWidth + _padding) * i, markHalfHeight};
     [starMaskLayer addSublayer:starLayer];
   }
-  [starMaskLayer setFrame:(CGRect){CGPointZero, _markImage.size.width * _numberOfStar, _markImage.size.height}];
+  [starMaskLayer setFrame:(CGRect){CGPointZero, self.intrinsicContentSize}];
   return starMaskLayer;
 }
 
@@ -202,29 +224,38 @@
 {
   CALayer *highlightLayer = [CALayer layer];
   highlightLayer.backgroundColor = _highlightColor.CGColor;
-  highlightLayer.bounds = (CGRect){CGPointZero, _markImage.size.width * _numberOfStar, _markImage.size.height};
+  highlightLayer.bounds = (CGRect){CGPointZero, self.intrinsicContentSize};
   highlightLayer.position = (CGPoint){CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds)};
   return highlightLayer;
 }
 
 #pragma mark - Event
+- (void)_updateValueWithLocation:(CGPoint)location
+{
+  float value = location.x / (self.intrinsicContentSize.width) * _numberOfStar;
+  if (_stepInterval != 0.0) {
+    if (_stepInterval == 1) {
+      value = ceilf(value / _stepInterval) * _stepInterval;
+    } else {
+      value = roundf(value / _stepInterval) * _stepInterval;
+    }
+  }
+  /* setValue will handle min/max edge cases */
+  [self setValue:value];
+}
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-  [self touchesMoved:touches withEvent:event];
+    [self _updateValueWithLocation:[touches.anyObject locationInView:self]];
 }
 
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+- (void)handleGesture:(UITapGestureRecognizer*)gesture
 {
-  CGPoint location = [[touches anyObject] locationInView:self];
-  float value = location.x / (_markImage.size.width * _numberOfStar) * _numberOfStar;
-  if (_stepInterval != 0.0) {
-    value = MAX(_minimumValue, ceilf(value / _stepInterval) * _stepInterval);
-  } else {
-    value = MAX(_minimumValue, value);
+  [self _updateValueWithLocation:[gesture locationInView:self]];
+    
+  if (gesture.state == UIGestureRecognizerStateEnded) {
+    [self notify];
   }
-  [self setValue:value];
-  [self sendActionsForControlEvents:UIControlEventValueChanged];
 }
 
 @end

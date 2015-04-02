@@ -19,4 +19,6 @@
 @property (nonatomic) float stepInterval;
 @property (nonatomic) float minimumValue;
 
+@property (nonatomic) CGFloat padding;
+@property (nonatomic) BOOL notifyContinuously;
 @end
