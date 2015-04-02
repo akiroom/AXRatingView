@@ -39,10 +39,10 @@
 
 - (void)sizeToFit
 {
-    [super sizeToFit];
-    self.frame = (CGRect) {
-        self.frame.origin, self.intrinsicContentSize
-    };
+  [super sizeToFit];
+  self.frame = (CGRect) {
+    self.frame.origin, self.intrinsicContentSize
+  };
 }
 
 - (CGSize)intrinsicContentSize
@@ -126,18 +126,18 @@
 
 - (void)setValue:(float)value
 {
-    value = MIN(MAX(value, 0.0), _numberOfStar);
-    
-    if (value == _value) {
-        return;
-    }
-    _value = value;
+  value = MIN(MAX(value, 0.0), _numberOfStar);
+
+  if (value == _value) {
+    return;
+  }
+  _value = value;
   [self setNeedsDisplay];
     
-    self.pendingNotification = YES;
-    if (self.notifyContinuously) {
-        [self notify];
-}
+  self.pendingNotification = YES;
+  if (self.notifyContinuously) {
+    [self notify];
+  }
 }
 
 - (void)setBaseColor:(UIColor *)baseColor
@@ -147,17 +147,26 @@
   [self setNeedsDisplay];
 }
 
+- (void)setHighlightColor:(UIColor *)highlightColor
+{
+  _highlightColor = highlightColor;
+  [_highlightLayer removeFromSuperlayer];
+  [_starMaskLayer removeFromSuperlayer];
+  _highlightLayer = nil;
+  _starMaskLayer = nil;
+}
+
 - (void)setMarkFontName:(NSString *)markFontName
 {
-    UIFont * font = [UIFont fontWithName:markFontName size:_markFont.pointSize];
-    if (font) {
-        self.markFont = font;
-    }
+  UIFont * font = [UIFont fontWithName:markFontName size:_markFont.pointSize];
+  if (font) {
+    self.markFont = font;
+  }
 }
 
 - (void)setMarkFontSize:(CGFloat)markFontSize
 {
-    self.markFont = [self.markFont fontWithSize:markFontSize];
+  self.markFont = [self.markFont fontWithSize:markFontSize];
 }
 
 - (void)setMarkFont:(UIFont *)markFont
@@ -197,10 +206,10 @@
     CALayer *starLayer = [CALayer layer];
     starLayer.contents = (id)_markImage.CGImage;
     starLayer.bounds = (CGRect){CGPointZero, _markImage.size};
-        starLayer.position = (CGPoint){markHalfWidth + (markWidth + _padding) * i, markHalfHeight};
+    starLayer.position = (CGPoint){markHalfWidth + (markWidth + _padding) * i, markHalfHeight};
     [starMaskLayer addSublayer:starLayer];
   }
-    [starMaskLayer setFrame:(CGRect){CGPointZero, self.intrinsicContentSize}];
+  [starMaskLayer setFrame:(CGRect){CGPointZero, self.intrinsicContentSize}];
   return starMaskLayer;
 }
 
@@ -223,18 +232,18 @@
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
   CGPoint location = [[touches anyObject] locationInView:self];
-    float value = location.x / (self.intrinsicContentSize.width) * _numberOfStar;
+  float value = location.x / (self.intrinsicContentSize.width) * _numberOfStar;
   if (_stepInterval != 0.0) {
-        if (_stepInterval == 1) {
-            value = ceilf(value / _stepInterval) * _stepInterval;
-        } else {
-    value = roundf(value / _stepInterval) * _stepInterval;
-  }
+    if (_stepInterval == 1) {
+      value = ceilf(value / _stepInterval) * _stepInterval;
+    } else {
+      value = roundf(value / _stepInterval) * _stepInterval;
     }
+  }
   [self setValue:value];
 }
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [self notify];
+  [self notify];
 }
 @end

@@ -5,7 +5,9 @@
 
 #import "AXViewController.h"
 
-@implementation AXViewController
+@implementation AXViewController {
+  AXRatingView *_setColorRatingView;
+}
 
 - (BOOL)prefersStatusBarHidden
 {
@@ -95,6 +97,16 @@
   [setColorRatingView setBaseColor:[UIColor orangeColor]];
   [setColorRatingView setHighlightColor:[UIColor greenColor]];
   [self.view addSubview:setColorRatingView];
+  _setColorRatingView = setColorRatingView;
+  
+  UIButton *changeColorButton = [UIButton buttonWithType:UIButtonTypeSystem];
+  [changeColorButton setTitle:@"change" forState:UIControlStateNormal];
+  [changeColorButton addTarget:self action:@selector(changeColor:) forControlEvents:UIControlEventTouchUpInside];
+  [changeColorButton setFrame:(CGRect){
+    CGRectGetMaxX(setColorRatingView.frame), CGRectGetMinY(setColorRatingView.frame),
+    160.0, CGRectGetHeight(setColorRatingView.frame)
+  }];
+  [self.view addSubview:changeColorButton];
   
   // not editable
   
@@ -141,15 +153,30 @@
   [self ratingChanged:self.ratingView];
 }
 
+#pragma mark - Action
+
 - (void)sliderChanged:(UISlider *)sender
 {
   [self.ratingView setValue:[sender value]];
+  [self.label setText:[NSString stringWithFormat:@"set and get: %.2f", sender.value]];
 }
 
 - (void)ratingChanged:(AXRatingView *)sender
 {
   [self.slider setValue:[sender value]];
   [self.label setText:[NSString stringWithFormat:@"set and get: %.2f", sender.value]];
+}
+
+- (void)changeColor:(id)sender
+{
+  [_setColorRatingView setBaseColor:[UIColor colorWithRed:rand() % 255 / 255.0
+                                                    green:rand() % 255 / 255.0
+                                                     blue:rand() % 255 / 255.0
+                                                    alpha:1.0]];
+  [_setColorRatingView setHighlightColor:[UIColor colorWithRed:rand() % 255 / 255.0
+                                                         green:rand() % 255 / 255.0
+                                                          blue:rand() % 255 / 255.0
+                                                         alpha:1.0]];
 }
 
 @end
