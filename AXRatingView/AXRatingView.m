@@ -19,6 +19,7 @@
   _highlightColor = [UIColor colorWithRed:1.0 green:0.8 blue:0.0 alpha:1.0];
   _numberOfStar = 5;
   _stepInterval = 0.0;
+  _minimumValue = 0.0;
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -47,8 +48,8 @@
 
 - (CGSize)intrinsicContentSize
 {
-    return CGSizeMake(self.markImage.size.width * _numberOfStar + _padding * (_numberOfStar-1),
-                      self.markImage.size.height);
+  return CGSizeMake(self.markImage.size.width * _numberOfStar + _padding * (_numberOfStar-1),
+                    self.markImage.size.height);
 }
 
 - (void)drawRect:(CGRect)rect
@@ -75,7 +76,7 @@
 
 - (void)setMarkImageNamed:(NSString*)markImageNamed
 {
-    [self setMarkImage:[UIImage imageNamed:markImageNamed]];
+  [self setMarkImage:[UIImage imageNamed:markImageNamed]];
 }
 
 - (UIImage *)markImage
@@ -118,22 +119,24 @@
 
 - (void)notify
 {
-    if (self.pendingNotification) {
-        [self sendActionsForControlEvents:UIControlEventValueChanged];
-    }
-    self.pendingNotification = NO;
+  /* We only want to trigger events when it's the right time */
+  if (self.pendingNotification) {
+    [self sendActionsForControlEvents:UIControlEventValueChanged];
+  }
+  self.pendingNotification = NO;
 }
 
 - (void)setValue:(float)value
 {
-  value = MIN(MAX(value, 0.0), _numberOfStar);
+  value = MIN(MAX(value, _minimumValue), _numberOfStar);
 
   if (value == _value) {
     return;
   }
   _value = value;
   [self setNeedsDisplay];
-    
+
+  /* There is new values */
   self.pendingNotification = YES;
   if (self.notifyContinuously) {
     [self notify];
@@ -142,18 +145,23 @@
 
 - (void)setBaseColor:(UIColor *)baseColor
 {
-  _baseColor = baseColor;
-  self.backgroundColor = _baseColor;
-  [self setNeedsDisplay];
+  if (_baseColor != baseColor) {
+    _baseColor = baseColor;
+    self.backgroundColor = _baseColor;
+    [self setNeedsDisplay];
+  }
 }
 
 - (void)setHighlightColor:(UIColor *)highlightColor
 {
-  _highlightColor = highlightColor;
-  [_highlightLayer removeFromSuperlayer];
-  [_starMaskLayer removeFromSuperlayer];
-  _highlightLayer = nil;
-  _starMaskLayer = nil;
+  if (_highlightColor != highlightColor) {
+    _highlightColor = highlightColor;
+    [_highlightLayer removeFromSuperlayer];
+    [_starMaskLayer removeFromSuperlayer];
+    _highlightLayer = nil;
+    _starMaskLayer = nil;
+    [self setNeedsDisplay];
+  }
 }
 
 - (void)setMarkFontName:(NSString *)markFontName
@@ -171,25 +179,40 @@
 
 - (void)setMarkFont:(UIFont *)markFont
 {
-  _markFont = markFont;
-  _markImage = nil;
-  [self setNeedsDisplay];
+  if (_markFont != markFont) {
+    _markFont = markFont;
+    _markImage = nil;
+    [self setNeedsDisplay];
+  }
 }
 
 - (void)setMarkCharacter:(NSString *)markCharacter
 {
-  _markCharacter = markCharacter;
-  _markImage = nil;
-  [self setNeedsDisplay];
+  if (_markCharacter != markCharacter) {
+    _markCharacter = markCharacter;
+    _markImage = nil;
+    [self setNeedsDisplay];
+  }
 }
 
 - (void)setNumberOfStar:(NSUInteger)numberOfStar
 {
-  _numberOfStar = numberOfStar;
-  [self setNeedsDisplay];
+  if (_numberOfStar != numberOfStar) {
+    _numberOfStar = numberOfStar;
+    [self setNeedsDisplay];
+  }
 }
 
-#pragma mark - Operations
+- (void)setBackgroundColor:(UIColor *)backgroundColor
+{
+  if (self.backgroundColor != backgroundColor) {
+    if (_baseColor != self.backgroundColor) {
+      [super setBackgroundColor:backgroundColor];
+    }
+  }
+}
+
+#pragma mark - Operation
 
 - (CALayer *)generateMaskLayer
 {
@@ -240,6 +263,7 @@
       value = roundf(value / _stepInterval) * _stepInterval;
     }
   }
+    /* setValue will handle min/max edge cases */
   [self setValue:value];
 }
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event

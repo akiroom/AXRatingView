@@ -1,12 +1,12 @@
 //
-//  AXViewController.h
+//  AXPropertiesViewController.h
 //  AXRatingViewDemo
 //
 
 #import <UIKit/UIKit.h>
 #import "AXRatingView/AXRatingView.h"
 
-@interface AXViewController : UIViewController
+@interface AXPropertiesViewController : UIViewController
 
 @property (strong ,nonatomic) UILabel *label;
 @property (strong, nonatomic) AXRatingView *ratingView;
