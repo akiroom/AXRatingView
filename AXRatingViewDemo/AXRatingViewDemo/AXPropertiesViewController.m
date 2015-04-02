@@ -9,6 +9,13 @@
   AXRatingView *_setColorRatingView;
 }
 
+- (void)showUpdate:(id)sender
+{
+  AXRatingView * r = sender;
+  UILabel * label = [self.view.subviews objectAtIndex:[self.view.subviews indexOfObject:r]-1];
+  label.text = [NSString stringWithFormat:@"%0.0f", r.value];
+}
+
 - (void)viewDidLoad
 {
   [super viewDidLoad];
@@ -43,25 +50,29 @@
   // step
   
   UILabel *stepLabel = [[UILabel alloc] initWithFrame:nextFrame()];
-  stepLabel.text = @"step";
+  stepLabel.text = @"step with continuos notification";
   [self.view addSubview:stepLabel];
   
   AXRatingView *stepRatingView = [[AXRatingView alloc] initWithFrame:nextFrame()];
     stepRatingView.padding = 10;
   [stepRatingView sizeToFit];
   [stepRatingView setStepInterval:1.0];
+  [stepRatingView setNotifyContinuously:YES];
   [self.view addSubview:stepRatingView];
-  
+  [stepRatingView addTarget:self action:@selector(showUpdate:) forControlEvents:UIControlEventValueChanged];
+
   // half step
   
   UILabel *halfStepLabel = [[UILabel alloc] initWithFrame:nextFrame()];
-  halfStepLabel.text = @"half step";
+  halfStepLabel.text = @"half step with final notification";
   [self.view addSubview:halfStepLabel];
   
   AXRatingView *halfStepRatingView = [[AXRatingView alloc] initWithFrame:nextFrame()];
   [halfStepRatingView sizeToFit];
   [halfStepRatingView setStepInterval:0.5];
+  [stepRatingView setNotifyContinuously:YES];
   [self.view addSubview:halfStepRatingView];
+  [halfStepRatingView addTarget:self action:@selector(showUpdate:) forControlEvents:UIControlEventValueChanged];
   
   // unicode character
   
