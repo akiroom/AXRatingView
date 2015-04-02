@@ -11,8 +11,6 @@
 
 @implementation AXRatingView
 
-#define TOTAL_WIDTH (self.markImage.size.width * _numberOfStar + _padding * (_numberOfStar-1))
-
 - (void)axRatingViewInit {
   _markCharacter = @"\u2605";
   _markFont = [UIFont systemFontOfSize:22.0];
@@ -42,27 +40,35 @@
 - (void)sizeToFit
 {
     [super sizeToFit];
-    self.frame = (CGRect){self.frame.origin, TOTAL_WIDTH, self.markImage.size.height};
+    self.frame = (CGRect) {
+        self.frame.origin, self.intrinsicContentSize
+    };
+}
+
+- (CGSize)intrinsicContentSize
+{
+    return CGSizeMake(self.markImage.size.width * _numberOfStar + _padding * (_numberOfStar-1),
+                      self.markImage.size.height);
 }
 
 - (void)drawRect:(CGRect)rect
 {
-    if (!_starMaskLayer) {
-        _starMaskLayer = [self generateMaskLayer];
-        self.layer.mask = _starMaskLayer;
-        _highlightLayer = [self highlightLayer];
-        [self.layer addSublayer:_highlightLayer];
-    }
-    
-    CGFloat selfWidth = TOTAL_WIDTH;
-    CGFloat selfHalfWidth = selfWidth / 2;
-    CGFloat selfHalfHeight = self.markImage.size.height / 2;
-    CGFloat offsetX = selfWidth / _numberOfStar * (_numberOfStar - _value);
-    [CATransaction begin];
-    [CATransaction setValue:(id)kCFBooleanTrue
-                     forKey:kCATransactionDisableActions];
-    _highlightLayer.position = (CGPoint){selfHalfWidth - offsetX, selfHalfHeight};
-    [CATransaction commit];
+  if (!_starMaskLayer) {
+    _starMaskLayer = [self generateMaskLayer];
+    self.layer.mask = _starMaskLayer;
+    _highlightLayer = [self highlightLayer];
+    [self.layer addSublayer:_highlightLayer];
+  }
+  
+  CGFloat selfWidth = self.intrinsicContentSize.width;
+  CGFloat selfHalfWidth = selfWidth / 2;
+  CGFloat selfHalfHeight = self.markImage.size.height / 2;
+  CGFloat offsetX = selfWidth / _numberOfStar * (_numberOfStar - _value);
+  [CATransaction begin];
+  [CATransaction setValue:(id)kCFBooleanTrue
+                   forKey:kCATransactionDisableActions];
+  _highlightLayer.position = (CGPoint){selfHalfWidth - offsetX, selfHalfHeight};
+  [CATransaction commit];
 }
 
 #pragma mark - Property
@@ -74,34 +80,40 @@
 
 - (UIImage *)markImage
 {
-    if (_markImage) {
-        return _markImage;
-    } else {
+  if (_markImage) {
+    return _markImage;
+  } else {
     CGSize size;
     if ([_markCharacter respondsToSelector:@selector(sizeWithAttributes:)]) {
       size = [_markCharacter sizeWithAttributes:@{NSFontAttributeName:_markFont}];
     } else {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
       size = [_markCharacter sizeWithFont:_markFont];
+#pragma clang diagnostic pop
     }
-        
-        UIGraphicsBeginImageContextWithOptions(size, NO, 2.0);
-        [[UIColor blackColor] set];
+    
+    UIGraphicsBeginImageContextWithOptions(size, NO, 2.0);
+    [[UIColor blackColor] set];
     if ([_markCharacter respondsToSelector:@selector(drawAtPoint:withAttributes:)]) {
-        [_markCharacter drawAtPoint:CGPointZero
-                     withAttributes:@{NSFontAttributeName: _markFont,
-                                      NSForegroundColorAttributeName: [UIColor blackColor]}];
+      [_markCharacter drawAtPoint:CGPointZero
+                   withAttributes:@{NSFontAttributeName: _markFont,
+                                    NSForegroundColorAttributeName: [UIColor blackColor]}];
     } else {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
       [_markCharacter drawAtPoint:CGPointZero withFont:_markFont];
+#pragma clang diagnostic pop
     }
-        UIImage *markImage = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        return _markImage = markImage;
-    }
+    UIImage *markImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return _markImage = markImage;
+  }
 }
 
 - (void)setStepInterval:(float)stepInterval
 {
-    _stepInterval = MAX(stepInterval, 0.0);
+  _stepInterval = MAX(stepInterval, 0.0);
 }
 
 - (void)notify
@@ -120,19 +132,19 @@
         return;
     }
     _value = value;
-    [self setNeedsDisplay];
+  [self setNeedsDisplay];
     
     self.pendingNotification = YES;
     if (self.notifyContinuously) {
         [self notify];
-    }
+}
 }
 
 - (void)setBaseColor:(UIColor *)baseColor
 {
-    _baseColor = baseColor;
-    self.backgroundColor = _baseColor;
-    [self setNeedsDisplay];
+  _baseColor = baseColor;
+  self.backgroundColor = _baseColor;
+  [self setNeedsDisplay];
 }
 
 - (void)setMarkFontName:(NSString *)markFontName
@@ -150,76 +162,76 @@
 
 - (void)setMarkFont:(UIFont *)markFont
 {
-    _markFont = markFont;
-    _markImage = nil;
-    [self setNeedsDisplay];
+  _markFont = markFont;
+  _markImage = nil;
+  [self setNeedsDisplay];
 }
 
 - (void)setMarkCharacter:(NSString *)markCharacter
 {
-    _markCharacter = markCharacter;
-    _markImage = nil;
-    [self setNeedsDisplay];
+  _markCharacter = markCharacter;
+  _markImage = nil;
+  [self setNeedsDisplay];
 }
 
 - (void)setNumberOfStar:(NSUInteger)numberOfStar
 {
-    _numberOfStar = numberOfStar;
-    [self setNeedsDisplay];
+  _numberOfStar = numberOfStar;
+  [self setNeedsDisplay];
 }
 
 #pragma mark - Operations
 
 - (CALayer *)generateMaskLayer
 {
-    // Generate Mask Layer
-    _markImage = [self markImage];
-    CGFloat markWidth = _markImage.size.width;
-    CGFloat markHalfWidth = markWidth / 2;
-    CGFloat markHeight = _markImage.size.height;
-    CGFloat markHalfHeight = markHeight / 2;
-    
-    CALayer *starMaskLayer = [CALayer layer];
-    starMaskLayer.opaque = NO;
-    for (int i = 0; i < _numberOfStar; i++) {
-        CALayer *starLayer = [CALayer layer];
-        starLayer.contents = (id)_markImage.CGImage;
-        starLayer.bounds = (CGRect){CGPointZero, _markImage.size};
+  // Generate Mask Layer
+  _markImage = [self markImage];
+  CGFloat markWidth = _markImage.size.width;
+  CGFloat markHalfWidth = markWidth / 2;
+  CGFloat markHeight = _markImage.size.height;
+  CGFloat markHalfHeight = markHeight / 2;
+  
+  CALayer *starMaskLayer = [CALayer layer];
+  starMaskLayer.opaque = NO;
+  for (int i = 0; i < _numberOfStar; i++) {
+    CALayer *starLayer = [CALayer layer];
+    starLayer.contents = (id)_markImage.CGImage;
+    starLayer.bounds = (CGRect){CGPointZero, _markImage.size};
         starLayer.position = (CGPoint){markHalfWidth + (markWidth + _padding) * i, markHalfHeight};
-        [starMaskLayer addSublayer:starLayer];
-    }
-    [starMaskLayer setFrame:(CGRect){CGPointZero, TOTAL_WIDTH, _markImage.size.height}];
-    return starMaskLayer;
+    [starMaskLayer addSublayer:starLayer];
+  }
+    [starMaskLayer setFrame:(CGRect){CGPointZero, self.intrinsicContentSize}];
+  return starMaskLayer;
 }
 
 - (CALayer *)highlightLayer
 {
-    CALayer *highlightLayer = [CALayer layer];
-    highlightLayer.backgroundColor = _highlightColor.CGColor;
-    highlightLayer.bounds = (CGRect){CGPointZero, TOTAL_WIDTH, _markImage.size.height};
-    highlightLayer.position = (CGPoint){CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds)};
-    return highlightLayer;
+  CALayer *highlightLayer = [CALayer layer];
+  highlightLayer.backgroundColor = _highlightColor.CGColor;
+  highlightLayer.bounds = (CGRect){CGPointZero, self.intrinsicContentSize};
+  highlightLayer.position = (CGPoint){CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds)};
+  return highlightLayer;
 }
 
 #pragma mark - Event
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [self touchesMoved:touches withEvent:event];
+  [self touchesMoved:touches withEvent:event];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    CGPoint location = [[touches anyObject] locationInView:self];
-    float value = location.x / (TOTAL_WIDTH) * _numberOfStar;
-    if (_stepInterval != 0.0) {
+  CGPoint location = [[touches anyObject] locationInView:self];
+    float value = location.x / (self.intrinsicContentSize.width) * _numberOfStar;
+  if (_stepInterval != 0.0) {
         if (_stepInterval == 1) {
             value = ceilf(value / _stepInterval) * _stepInterval;
         } else {
-            value = roundf(value / _stepInterval) * _stepInterval;
-        }
+    value = roundf(value / _stepInterval) * _stepInterval;
+  }
     }
-    [self setValue:value];
+  [self setValue:value];
 }
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
