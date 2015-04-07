@@ -61,12 +61,13 @@
   
   CGFloat selfWidth = (self.markImage.size.width * _numberOfStar);
   CGFloat selfHalfWidth = selfWidth / 2;
-  CGFloat selfHalfHeight = self.markImage.size.height / 2;
+  CGFloat selfHalfHeight = self.frame.size.height / 2;
+  CGFloat frameOffsetX = (self.frame.size.width - selfWidth) / 2;
   CGFloat offsetX = selfWidth / _numberOfStar * (_numberOfStar - _value);
   [CATransaction begin];
   [CATransaction setValue:(id)kCFBooleanTrue
                    forKey:kCATransactionDisableActions];
-  _highlightLayer.position = (CGPoint){selfHalfWidth - offsetX, selfHalfHeight};
+  _highlightLayer.position = (CGPoint){selfHalfWidth - (offsetX - frameOffsetX), selfHalfHeight};
   [CATransaction commit];
 }
 
@@ -194,7 +195,12 @@
     starLayer.position = (CGPoint){markHalfWidth + markWidth * i, markHalfHeight};
     [starMaskLayer addSublayer:starLayer];
   }
-  [starMaskLayer setFrame:(CGRect){CGPointZero, _markImage.size.width * _numberOfStar, _markImage.size.height}];
+  // Calculate start mask layer origins based on the view frame.
+  // With this calculation starts would be aligned center in the view's frame
+  CGFloat totalStartsWidth = (markWidth * _numberOfStar);
+  CGFloat frameOffsetX = (self.frame.size.width - totalStartsWidth) / 2;
+  CGFloat frameOffsetY = (self.frame.size.height - _markImage.size.height) / 2;
+  [starMaskLayer setFrame:(CGRect){frameOffsetX, frameOffsetY, _markImage.size.width * _numberOfStar, _markImage.size.height}];
   return starMaskLayer;
 }
 
@@ -216,15 +222,25 @@
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-  CGPoint location = [[touches anyObject] locationInView:self];
-  float value = location.x / (_markImage.size.width * _numberOfStar) * _numberOfStar;
-  if (_stepInterval != 0.0) {
-    value = MAX(_minimumValue, ceilf(value / _stepInterval) * _stepInterval);
-  } else {
-    value = MAX(_minimumValue, value);
-  }
-  [self setValue:value];
-  [self sendActionsForControlEvents:UIControlEventValueChanged];
+    // Because we aligned center we should only accept touches that
+    // is in stars region not entire frame rect and then calculate
+    // the value based on the frame alignment (frameOffsetX).
+    CGPoint location = [[touches anyObject] locationInView:self];
+    CGFloat totalStartsWidth = (_markImage.size.width * _numberOfStar);
+    CGFloat frameOffsetX = (self.frame.size.width - totalStartsWidth) / 2;
+    CGFloat frameOffsetY = (self.frame.size.height - _markImage.size.height) / 2;
+
+    if (CGRectContainsPoint(CGRectMake(frameOffsetX - _markImage.size.width, frameOffsetY, totalStartsWidth + _markImage.size.width, _markImage.size.height), location)) {
+
+        float value = ((location.x - frameOffsetX)/ (_markImage.size.width * _numberOfStar)) * _numberOfStar;
+        if (_stepInterval != 0.0) {
+            value = MAX(_minimumValue, ceilf(value / _stepInterval) * _stepInterval);
+        } else {
+            value = MAX(_minimumValue, value);
+        }
+        [self setValue:value];
+        [self sendActionsForControlEvents:UIControlEventValueChanged];
+    }
 }
 
 @end
