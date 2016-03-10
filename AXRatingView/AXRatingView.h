@@ -4,11 +4,14 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol AXRatingViewDelegateProtocol;
+
 @interface AXRatingView : UIControl {
   CALayer *_starMaskLayer;
   CALayer *_highlightLayer;
   UIImage *_markImage;
 }
+@property (weak, nonatomic) id<AXRatingViewDelegateProtocol> delegate;
 @property (nonatomic) NSUInteger numberOfStar;
 @property (copy, nonatomic) NSString *markCharacter;
 @property (strong, nonatomic) UIFont *markFont;
@@ -18,5 +21,12 @@
 @property (nonatomic) float value;
 @property (nonatomic) float stepInterval;
 @property (nonatomic) float minimumValue;
+
+@end
+
+
+@protocol AXRatingViewDelegateProtocol
+
+-(void)didUpdateRatingWithValue:(CGFloat)value;
 
 @end

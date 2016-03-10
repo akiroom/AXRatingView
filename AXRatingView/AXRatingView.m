@@ -118,6 +118,15 @@
   }
 }
 
+- (void)updateValue:(float)value
+{
+    if (_value != value) {
+        _value = MIN(MAX(value, 0.0), _numberOfStar);
+        [self setNeedsDisplay];
+        [self.delegate didUpdateRatingWithValue:_value];
+    }
+}
+
 - (void)setBaseColor:(UIColor *)baseColor
 {
   if (_baseColor != baseColor) {
@@ -223,7 +232,7 @@
   } else {
     value = MAX(_minimumValue, value);
   }
-  [self setValue:value];
+  [self updateValue:value];
   [self sendActionsForControlEvents:UIControlEventValueChanged];
 }
 
