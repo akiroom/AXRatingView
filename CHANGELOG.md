@@ -1,9 +1,13 @@
 CHANGELOG
 ---------
 
+## 1.0.6
+
+- Stop hard coding the screen resolution.
+
 ## 1.0.5
 
-- Support Autolayout
+- Support Autolayout.
 
 ## 1.0.4
 

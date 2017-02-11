@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "AXRatingView"
-  s.version      = "1.0.5"
+  s.version      = "1.0.6"
   s.summary      = "Star mark rating view"
   s.description  = <<-DESC
                    Star mark rating view for a review scene.
