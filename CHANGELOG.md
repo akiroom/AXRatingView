@@ -1,6 +1,12 @@
 CHANGELOG
 ---------
 
+## 1.0.4
+
+- I'm back!😄
+- Update demo app for iOS 10.
+- [#19](https://github.com/akiroom/AXRatingView/pull/19) Stars aligned themselves (center) without changing the view's frame. (Thank you, [@iNima](https://github.com/iNima))
+
 ## 1.0.3
 
 - Add ```minimumValue``` property. (#15)
