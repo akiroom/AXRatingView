@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "AXRatingView"
-  s.version      = "1.0.4"
+  s.version      = "1.0.5"
   s.summary      = "Star mark rating view"
   s.description  = <<-DESC
                    Star mark rating view for a review scene.
@@ -12,12 +12,13 @@ Pod::Spec.new do |s|
                    - Set color
                    - Editable & Not Editable
                    - Easy to Get/Set.
-                   - Compatibility for iOS6, iOS7, iOS8
+                   - Compatibility for iOS8, iOS9, iOS10
+                   - Support Auto Layout
                    DESC
   s.homepage     = "https://github.com/akiroom/AXRatingView"
-  s.screenshots  = "https://raw.github.com/akiroom/AXRatingView/master/AXRatingViewDemo/Screenshot.png"
+  s.screenshots  = 'https://raw.github.com/akiroom/AXRatingView/master/AXRatingViewDemo/Screenshot.png', 'https://raw.github.com/akiroom/AXRatingView/master/AXRatingViewDemo/Screenshot-Storyboard.png'
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
-  s.author       = { "Hiroki Akiyama" => "aki-hiroki@nifty.com" }
+  s.author       = { "akiroom" => "akiyama@akiroom.com" }
   s.platform     = :ios
   s.source       = { :git => "https://github.com/akiroom/AXRatingView.git", :tag => s.version.to_s }
   s.source_files  = 'AXRatingView', 'Classes/**/*.{h,m}'

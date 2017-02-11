@@ -15,7 +15,7 @@ Star mark rating view for a review scene.
 - Editable & Not Editable
 - Easy to Get/Set.
 - Compatibility for iOS8, iOS9, iOS10
-- Autolayout & Storyboard
+- Support Auto Layout
 
 ## Screenshots
 ### iOS10
