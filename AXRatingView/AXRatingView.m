@@ -94,7 +94,7 @@
   } else {
     CGSize size = self.markCharacterSize;
 
-    UIGraphicsBeginImageContextWithOptions(size, NO, 2.0);
+    UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
     [[UIColor blackColor] set];
     if ([_markCharacter respondsToSelector:@selector(drawAtPoint:withAttributes:)]) {
       [_markCharacter drawAtPoint:CGPointZero
