@@ -1,2 +1,5 @@
 platform :ios
-pod 'AXRatingView', :path => '..'
+use_frameworks!
+target 'AXRatingViewDemo' do
+  pod 'AXRatingView', :path => '..'
+end

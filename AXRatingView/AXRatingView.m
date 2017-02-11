@@ -5,9 +5,12 @@
 #import "AXRatingView.h"
 #import <QuartzCore/QuartzCore.h>
 
-@implementation AXRatingView
+@implementation AXRatingView {
+  CGSize _cachedMarkCharacterSize;
+}
 
 - (void)axRatingViewInit {
+  _cachedMarkCharacterSize = CGSizeZero;
   _markCharacter = @"\u2605";
   _markFont = [UIFont systemFontOfSize:22.0];
   _baseColor = [UIColor darkGrayColor];
@@ -42,11 +45,22 @@
   };
 }
 
+- (CGSize)systemLayoutSizeFittingSize:(CGSize)targetSize {
+  return self.intrinsicContentSize;
+}
+
 - (CGSize)intrinsicContentSize
 {
+  CGSize size;
+  if (_markImage) {
+    size = _markImage.size;
+  } else {
+    size = self.markCharacterSize;
+  }
+
   return (CGSize){
-    self.markImage.size.width * _numberOfStar,
-    self.markImage.size.height
+    size.width * _numberOfStar,
+    size.height
   };
 }
 
@@ -78,16 +92,8 @@
   if (_markImage) {
     return _markImage;
   } else {
-    CGSize size;
-    if ([_markCharacter respondsToSelector:@selector(sizeWithAttributes:)]) {
-      size = [_markCharacter sizeWithAttributes:@{NSFontAttributeName:_markFont}];
-    } else {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-      size = [_markCharacter sizeWithFont:_markFont];
-#pragma clang diagnostic pop
-    }
-    
+    CGSize size = self.markCharacterSize;
+
     UIGraphicsBeginImageContextWithOptions(size, NO, 2.0);
     [[UIColor blackColor] set];
     if ([_markCharacter respondsToSelector:@selector(drawAtPoint:withAttributes:)]) {
@@ -104,6 +110,22 @@
     UIGraphicsEndImageContext();
     return _markImage = markImage;
   }
+}
+
+- (CGSize)markCharacterSize {
+  if (CGSizeEqualToSize(_cachedMarkCharacterSize, CGSizeZero)) {
+    CGSize size;
+    if ([_markCharacter respondsToSelector:@selector(sizeWithAttributes:)]) {
+      size = [_markCharacter sizeWithAttributes:@{NSFontAttributeName:_markFont}];
+    } else {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+      size = [_markCharacter sizeWithFont:_markFont];
+#pragma clang diagnostic pop
+    }
+    _cachedMarkCharacterSize = size;
+  }
+  return _cachedMarkCharacterSize;
 }
 
 - (void)setStepInterval:(float)stepInterval
@@ -154,6 +176,8 @@
   if (_markCharacter != markCharacter) {
     _markCharacter = markCharacter;
     _markImage = nil;
+    _cachedMarkCharacterSize = CGSizeZero;
+    [self invalidateIntrinsicContentSize];
     [self setNeedsDisplay];
   }
 }
@@ -162,6 +186,7 @@
 {
   if (_numberOfStar != numberOfStar) {
     _numberOfStar = numberOfStar;
+    [self invalidateIntrinsicContentSize];
     [self setNeedsDisplay];
   }
 }

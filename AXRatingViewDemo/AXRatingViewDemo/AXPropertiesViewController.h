@@ -4,7 +4,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AXRatingView/AXRatingView.h"
+#import <AXRatingView/AXRatingView.h>
 
 @interface AXPropertiesViewController : UIViewController
 

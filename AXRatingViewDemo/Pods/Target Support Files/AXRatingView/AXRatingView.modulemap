@@ -1,0 +1,6 @@
+framework module AXRatingView {
+  umbrella header "AXRatingView-umbrella.h"
+
+  export *
+  module * { export * }
+}

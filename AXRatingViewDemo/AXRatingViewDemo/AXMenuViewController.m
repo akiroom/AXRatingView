@@ -24,6 +24,7 @@
   @[
     @"Properties",
     @"on the UITableViewCell",
+    @"with Storyboard"
     ];
 }
 
@@ -71,6 +72,12 @@
       // on the UITableViewCell
       AXOnTheCellViewController *onTheCellViewCon = [[AXOnTheCellViewController alloc] init];
       [self.navigationController pushViewController:onTheCellViewCon animated:YES];
+      break;
+    }
+    case 2: {
+      UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
+      id viewCon = [storyboard instantiateInitialViewController];
+      [self.navigationController pushViewController:viewCon animated:YES];
       break;
     }
     default:
