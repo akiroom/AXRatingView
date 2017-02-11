@@ -1,6 +1,10 @@
 CHANGELOG
 ---------
 
+## 1.0.5
+
+- Support Autolayout
+
 ## 1.0.4
 
 - I'm back!😄
