@@ -1,4 +1,3 @@
 language: objective-c
-
-script: make test
-
+xcode_project: AXRatingViewDemo/AXRatingViewDemo.xcworkspace 
+xcode_scheme: AXRatingViewDemo
