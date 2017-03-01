@@ -19,5 +19,6 @@ IB_DESIGNABLE
 @property (nonatomic) IBInspectable float value;
 @property (nonatomic) IBInspectable float stepInterval;
 @property (nonatomic) IBInspectable float minimumValue;
+@property (nonatomic) IBInspectable BOOL distributeSpacingEvenly;
 
 @end
