@@ -14,7 +14,6 @@
   _markCharacter = @"\u2605";
   _markFont = [UIFont systemFontOfSize:22.0];
   _baseColor = [UIColor darkGrayColor];
-  self.backgroundColor = _baseColor;
   _highlightColor = [UIColor colorWithRed:1.0 green:0.8 blue:0.0 alpha:1.0];
   _numberOfStar = 5;
   _stepInterval = 0.0;
@@ -69,6 +68,8 @@
   if (!_starMaskLayer) {
     _starMaskLayer = [self generateMaskLayer];
     self.layer.mask = _starMaskLayer;
+    _basementLayer = [self basementLayer];
+    [self.layer addSublayer:_basementLayer];
     _highlightLayer = [self highlightLayer];
     [self.layer addSublayer:_highlightLayer];
   }
@@ -145,7 +146,8 @@
 {
   if (_baseColor != baseColor) {
     _baseColor = baseColor;
-    self.backgroundColor = _baseColor;
+    [_basementLayer removeFromSuperlayer];
+    _basementLayer = nil;
     [self setNeedsDisplay];
   }
 }
@@ -191,15 +193,6 @@
   }
 }
 
-- (void)setBackgroundColor:(UIColor *)backgroundColor
-{
-  if (self.backgroundColor != backgroundColor) {
-    if (_baseColor != self.backgroundColor) {
-      [super setBackgroundColor:backgroundColor];
-    }
-  }
-}
-
 #pragma mark - Operation
 
 - (CALayer *)generateMaskLayer
@@ -227,6 +220,14 @@
   CGFloat frameOffsetY = (self.frame.size.height - _markImage.size.height) / 2;
   [starMaskLayer setFrame:(CGRect){frameOffsetX, frameOffsetY, _markImage.size.width * _numberOfStar, _markImage.size.height}];
   return starMaskLayer;
+}
+
+- (CALayer *)basementLayer {
+  CALayer *basementLayer = [CALayer layer];
+  basementLayer.backgroundColor = _baseColor.CGColor;
+  basementLayer.bounds = (CGRect){CGPointZero, _markImage.size.width * _numberOfStar, _markImage.size.height};
+  basementLayer.position = (CGPoint){CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds)};
+  return basementLayer;
 }
 
 - (CALayer *)highlightLayer
