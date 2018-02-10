@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		03C5BB0304AAB490B810EC6E7D2CFFD8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC5D9C5B838BE747D0154460D02F926 /* Foundation.framework */; };
-		15C2EFF2E2D08CED8EABBA01E8CD19A8 /* AXRatingView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DD3E907CA4287838CDFCEE0DF85DD906 /* AXRatingView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		183F601D4E0BD9A092F23922BD70ECCA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC5D9C5B838BE747D0154460D02F926 /* Foundation.framework */; };
-		567D0A226F2D1467490FE545D7EAB92E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACC64101FAE4862F8806DB02FC71B0E /* QuartzCore.framework */; };
-		58639EF69F7DE11C05E3D8BA687E4210 /* Pods-AXRatingViewDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B04B80067633A45D56524FA606F6CDA /* Pods-AXRatingViewDemo-dummy.m */; };
-		6D41EB5A15AF45E2311DE3689D6E5AB0 /* Pods-AXRatingViewDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 38C06B2F1D160388CC3CFD1B25F35EAD /* Pods-AXRatingViewDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8D2730B60743749AE19F4224750CE616 /* AXRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DFA8EDA63086B8F2FA720F0FC11F1F2 /* AXRatingView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		B48755A2C69F34BCB171A7A0311F3BD0 /* AXRatingView.h in Headers */ = {isa = PBXBuildFile; fileRef = AEED329A26C91F2ED8B3EC58C1C7854B /* AXRatingView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F136363572C81C5D0A7AAAA1CD2202D2 /* AXRatingView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6A641CCFF95ABB09C8555345253E3D /* AXRatingView-dummy.m */; };
+		09CDF5BB63A31D8DEAF011A76B9C3621 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F9A0E952988935C32EDDB1429D7133 /* Foundation.framework */; };
+		0A9E059CCBA2D3AC3DC4080A9F8CF9C1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2770B482BFE91273C8560623F1422C /* QuartzCore.framework */; };
+		277AD2E3321C0BCE57DFF5B6DCC462A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F9A0E952988935C32EDDB1429D7133 /* Foundation.framework */; };
+		53559F775062A8C859C8611EFEB2EE9D /* AXRatingView.h in Headers */ = {isa = PBXBuildFile; fileRef = F94DE3E3B2E2AF4388798E6FFF13A28E /* AXRatingView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58639EF69F7DE11C05E3D8BA687E4210 /* Pods-AXRatingViewDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EC310F0A0B87CC666ED844A0AA46F740 /* Pods-AXRatingViewDemo-dummy.m */; };
+		6D41EB5A15AF45E2311DE3689D6E5AB0 /* Pods-AXRatingViewDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 05522C2037D95E8DA389CA458C8826B7 /* Pods-AXRatingViewDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C85392900243D6EC300BCBA0D7F1CAED /* AXRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DCC0F69F3B37750D9028F6E86DC2C4 /* AXRatingView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		D647CE40A7FEEC3A7882687E39026DF9 /* AXRatingView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F0ECFA9ECE7061ABA33E3C8F532586 /* AXRatingView-dummy.m */; };
+		ECEA52FBF56F6EF909D2BC5399823807 /* AXRatingView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3B768615142F0D48F688729BF132C1 /* AXRatingView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,29 +29,32 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0F2FD0EF207E1C079348DF860F962267 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1B04B80067633A45D56524FA606F6CDA /* Pods-AXRatingViewDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AXRatingViewDemo-dummy.m"; sourceTree = "<group>"; };
-		25F4DE23B878B443441A387AC1D9F551 /* AXRatingView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = AXRatingView.modulemap; sourceTree = "<group>"; };
-		332A981D150F3B7D8323188401AAFF3C /* Pods-AXRatingViewDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AXRatingViewDemo-frameworks.sh"; sourceTree = "<group>"; };
-		38C06B2F1D160388CC3CFD1B25F35EAD /* Pods-AXRatingViewDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AXRatingViewDemo-umbrella.h"; sourceTree = "<group>"; };
-		3AC5D9C5B838BE747D0154460D02F926 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		3D8BE87C6D5D65427F1586759351670D /* AXRatingView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AXRatingView.xcconfig; sourceTree = "<group>"; };
-		3F80C6255A10BA9565D52FCC48AF0B9A /* Pods-AXRatingViewDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AXRatingViewDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
-		6DFA8EDA63086B8F2FA720F0FC11F1F2 /* AXRatingView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = AXRatingView.m; sourceTree = "<group>"; };
-		70E957498BA43270889F56BAC5ABD5A4 /* Pods-AXRatingViewDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AXRatingViewDemo-resources.sh"; sourceTree = "<group>"; };
-		8A530DBC04C5E5A5723EB4D67B6D6838 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8E049EE0D5E09BB65D008F1F13358D2B /* Pods-AXRatingViewDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-AXRatingViewDemo.modulemap"; sourceTree = "<group>"; };
+		0414332042FDD56484E745CA95E14097 /* Pods-AXRatingViewDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AXRatingViewDemo-frameworks.sh"; sourceTree = "<group>"; };
+		05522C2037D95E8DA389CA458C8826B7 /* Pods-AXRatingViewDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AXRatingViewDemo-umbrella.h"; sourceTree = "<group>"; };
+		0C2E001E4FCB33AB5A085FAACFE55C5F /* Pods-AXRatingViewDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AXRatingViewDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
+		0FF7C51A0DA48B5C0A3AC30DB520A5B7 /* Pods-AXRatingViewDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AXRatingViewDemo-resources.sh"; sourceTree = "<group>"; };
+		1B3B768615142F0D48F688729BF132C1 /* AXRatingView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AXRatingView-umbrella.h"; sourceTree = "<group>"; };
+		20A3F393E688299C3838AEAA9B00E867 /* Pods-AXRatingViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AXRatingViewDemo.release.xcconfig"; sourceTree = "<group>"; };
+		2B42D533816770EBC34FBA1602484589 /* Pods-AXRatingViewDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AXRatingViewDemo-acknowledgements.plist"; sourceTree = "<group>"; };
+		34A3981A1670AB4F3F244ACC93BFBC04 /* Pods-AXRatingViewDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AXRatingViewDemo.modulemap"; sourceTree = "<group>"; };
+		38BB24FFE6C639A5B06D046B1B1FE6B1 /* AXRatingView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AXRatingView-prefix.pch"; sourceTree = "<group>"; };
+		42AD87A60885FC5DD7250B7D02D6163E /* Pods-AXRatingViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AXRatingViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		49DCC0F69F3B37750D9028F6E86DC2C4 /* AXRatingView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AXRatingView.m; path = AXRatingView/AXRatingView.m; sourceTree = "<group>"; };
+		54F9A0E952988935C32EDDB1429D7133 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		65A637434AD27F3B1379FCACF221172C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75F0ECFA9ECE7061ABA33E3C8F532586 /* AXRatingView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AXRatingView-dummy.m"; sourceTree = "<group>"; };
+		917BE521FA0A27EE327669515EB8934D /* AXRatingView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = AXRatingView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A5476058DD42997F924BAB5E79DDF699 /* Pods_AXRatingViewDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AXRatingViewDemo.framework; path = "Pods-AXRatingViewDemo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A8631FCF16C4EAA88855F2E85BA1BCC3 /* Pods-AXRatingViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AXRatingViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		AEED329A26C91F2ED8B3EC58C1C7854B /* AXRatingView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AXRatingView.h; sourceTree = "<group>"; };
-		BACC64101FAE4862F8806DB02FC71B0E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		C5D39AB54FAD635DBBAD2BB0AACC736C /* Pods-AXRatingViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AXRatingViewDemo.release.xcconfig"; sourceTree = "<group>"; };
-		C843AB013D74FC23E1003C27CFAE889F /* AXRatingView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AXRatingView-prefix.pch"; sourceTree = "<group>"; };
-		C8503D09D9778086DA6A5536A3C89B1A /* Pods-AXRatingViewDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AXRatingViewDemo-acknowledgements.plist"; sourceTree = "<group>"; };
-		DD3E907CA4287838CDFCEE0DF85DD906 /* AXRatingView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AXRatingView-umbrella.h"; sourceTree = "<group>"; };
-		EF6A641CCFF95ABB09C8555345253E3D /* AXRatingView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AXRatingView-dummy.m"; sourceTree = "<group>"; };
+		A6BFA0AA16B0A8BF4CA78018FAFB0A0D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		B6B6FDEBEB83260BF84233AA7B6C2F09 /* AXRatingView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AXRatingView.modulemap; sourceTree = "<group>"; };
+		D6076AC68F32452F59ECA4B6FF63F74F /* AXRatingView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AXRatingView.xcconfig; sourceTree = "<group>"; };
+		E17F278E28C556F7BDAA97DB7BC4D36F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC310F0A0B87CC666ED844A0AA46F740 /* Pods-AXRatingViewDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AXRatingViewDemo-dummy.m"; sourceTree = "<group>"; };
+		ED67656FE7FA26FF412CFFF3B99F2D63 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		F94DE3E3B2E2AF4388798E6FFF13A28E /* AXRatingView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AXRatingView.h; path = AXRatingView/AXRatingView.h; sourceTree = "<group>"; };
 		FBB2A1E5C01F82AA5F0436A0621C1238 /* AXRatingView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AXRatingView.framework; path = AXRatingView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC2770B482BFE91273C8560623F1422C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				183F601D4E0BD9A092F23922BD70ECCA /* Foundation.framework in Frameworks */,
+				09CDF5BB63A31D8DEAF011A76B9C3621 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,71 +70,100 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03C5BB0304AAB490B810EC6E7D2CFFD8 /* Foundation.framework in Frameworks */,
-				567D0A226F2D1467490FE545D7EAB92E /* QuartzCore.framework in Frameworks */,
+				277AD2E3321C0BCE57DFF5B6DCC462A9 /* Foundation.framework in Frameworks */,
+				0A9E059CCBA2D3AC3DC4080A9F8CF9C1 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2407257EA5CEA812465326088A7DE02D /* Support Files */ = {
+		1A0A1E64A7FF6C1619F84066C8E71C59 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				25F4DE23B878B443441A387AC1D9F551 /* AXRatingView.modulemap */,
-				3D8BE87C6D5D65427F1586759351670D /* AXRatingView.xcconfig */,
-				EF6A641CCFF95ABB09C8555345253E3D /* AXRatingView-dummy.m */,
-				C843AB013D74FC23E1003C27CFAE889F /* AXRatingView-prefix.pch */,
-				DD3E907CA4287838CDFCEE0DF85DD906 /* AXRatingView-umbrella.h */,
-				8A530DBC04C5E5A5723EB4D67B6D6838 /* Info.plist */,
+				778A54491BB5ABCCE7B02F733CA2D484 /* AXRatingView */,
 			);
-			name = "Support Files";
-			path = "AXRatingViewDemo/Pods/Target Support Files/AXRatingView";
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C7AB6F27FF3606F9360547F8F1977A63 /* iOS */,
+				978007DCB56F415BE390E0F949D4D4E5 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4D80096320E18E3E38E184D41AC98E61 /* Development Pods */ = {
+		463CFB0DFE116AC9ADD685C75169E4A8 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				BF463BD16C837F66F44B2726AA9D994A /* AXRatingView */,
+				B6B6FDEBEB83260BF84233AA7B6C2F09 /* AXRatingView.modulemap */,
+				D6076AC68F32452F59ECA4B6FF63F74F /* AXRatingView.xcconfig */,
+				75F0ECFA9ECE7061ABA33E3C8F532586 /* AXRatingView-dummy.m */,
+				38BB24FFE6C639A5B06D046B1B1FE6B1 /* AXRatingView-prefix.pch */,
+				1B3B768615142F0D48F688729BF132C1 /* AXRatingView-umbrella.h */,
+				E17F278E28C556F7BDAA97DB7BC4D36F /* Info.plist */,
 			);
-			name = "Development Pods";
+			name = "Support Files";
+			path = "AXRatingViewDemo/Pods/Target Support Files/AXRatingView";
+			sourceTree = "<group>";
+		};
+		6027A1FF57013DFE706AF2FFB87E593C /* Pods-AXRatingViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				65A637434AD27F3B1379FCACF221172C /* Info.plist */,
+				34A3981A1670AB4F3F244ACC93BFBC04 /* Pods-AXRatingViewDemo.modulemap */,
+				0C2E001E4FCB33AB5A085FAACFE55C5F /* Pods-AXRatingViewDemo-acknowledgements.markdown */,
+				2B42D533816770EBC34FBA1602484589 /* Pods-AXRatingViewDemo-acknowledgements.plist */,
+				EC310F0A0B87CC666ED844A0AA46F740 /* Pods-AXRatingViewDemo-dummy.m */,
+				0414332042FDD56484E745CA95E14097 /* Pods-AXRatingViewDemo-frameworks.sh */,
+				0FF7C51A0DA48B5C0A3AC30DB520A5B7 /* Pods-AXRatingViewDemo-resources.sh */,
+				05522C2037D95E8DA389CA458C8826B7 /* Pods-AXRatingViewDemo-umbrella.h */,
+				42AD87A60885FC5DD7250B7D02D6163E /* Pods-AXRatingViewDemo.debug.xcconfig */,
+				20A3F393E688299C3838AEAA9B00E867 /* Pods-AXRatingViewDemo.release.xcconfig */,
+			);
+			name = "Pods-AXRatingViewDemo";
+			path = "Target Support Files/Pods-AXRatingViewDemo";
 			sourceTree = "<group>";
 		};
 		6A926839674BC121F31DBCA4AF26BA2F /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				C1D63D7407F74579E98C197E4A590371 /* Pods-AXRatingViewDemo */,
+				6027A1FF57013DFE706AF2FFB87E593C /* Pods-AXRatingViewDemo */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		778A54491BB5ABCCE7B02F733CA2D484 /* AXRatingView */ = {
+			isa = PBXGroup;
+			children = (
+				F94DE3E3B2E2AF4388798E6FFF13A28E /* AXRatingView.h */,
+				49DCC0F69F3B37750D9028F6E86DC2C4 /* AXRatingView.m */,
+				F1A3E33482E7817F59F6E6C158E13F86 /* Pod */,
+				463CFB0DFE116AC9ADD685C75169E4A8 /* Support Files */,
+			);
+			name = AXRatingView;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				4D80096320E18E3E38E184D41AC98E61 /* Development Pods */,
+				1A0A1E64A7FF6C1619F84066C8E71C59 /* Development Pods */,
 				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
 				AA20D1A0D28100F9410E88F2DCD5C70D /* Products */,
 				6A926839674BC121F31DBCA4AF26BA2F /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		9C9C564E3C46B5AEFE4486FF4F555C84 /* AXRatingView */ = {
+		978007DCB56F415BE390E0F949D4D4E5 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				AEED329A26C91F2ED8B3EC58C1C7854B /* AXRatingView.h */,
-				6DFA8EDA63086B8F2FA720F0FC11F1F2 /* AXRatingView.m */,
+				54F9A0E952988935C32EDDB1429D7133 /* Foundation.framework */,
+				FC2770B482BFE91273C8560623F1422C /* QuartzCore.framework */,
 			);
-			name = AXRatingView;
-			path = AXRatingView;
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		AA20D1A0D28100F9410E88F2DCD5C70D /* Products */ = {
@@ -143,52 +175,25 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BF463BD16C837F66F44B2726AA9D994A /* AXRatingView */ = {
+		F1A3E33482E7817F59F6E6C158E13F86 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				9C9C564E3C46B5AEFE4486FF4F555C84 /* AXRatingView */,
-				2407257EA5CEA812465326088A7DE02D /* Support Files */,
+				917BE521FA0A27EE327669515EB8934D /* AXRatingView.podspec */,
+				ED67656FE7FA26FF412CFFF3B99F2D63 /* LICENSE */,
+				A6BFA0AA16B0A8BF4CA78018FAFB0A0D /* README.md */,
 			);
-			name = AXRatingView;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		C1D63D7407F74579E98C197E4A590371 /* Pods-AXRatingViewDemo */ = {
-			isa = PBXGroup;
-			children = (
-				0F2FD0EF207E1C079348DF860F962267 /* Info.plist */,
-				8E049EE0D5E09BB65D008F1F13358D2B /* Pods-AXRatingViewDemo.modulemap */,
-				3F80C6255A10BA9565D52FCC48AF0B9A /* Pods-AXRatingViewDemo-acknowledgements.markdown */,
-				C8503D09D9778086DA6A5536A3C89B1A /* Pods-AXRatingViewDemo-acknowledgements.plist */,
-				1B04B80067633A45D56524FA606F6CDA /* Pods-AXRatingViewDemo-dummy.m */,
-				332A981D150F3B7D8323188401AAFF3C /* Pods-AXRatingViewDemo-frameworks.sh */,
-				70E957498BA43270889F56BAC5ABD5A4 /* Pods-AXRatingViewDemo-resources.sh */,
-				38C06B2F1D160388CC3CFD1B25F35EAD /* Pods-AXRatingViewDemo-umbrella.h */,
-				A8631FCF16C4EAA88855F2E85BA1BCC3 /* Pods-AXRatingViewDemo.debug.xcconfig */,
-				C5D39AB54FAD635DBBAD2BB0AACC736C /* Pods-AXRatingViewDemo.release.xcconfig */,
-			);
-			name = "Pods-AXRatingViewDemo";
-			path = "Target Support Files/Pods-AXRatingViewDemo";
-			sourceTree = "<group>";
-		};
-		C7AB6F27FF3606F9360547F8F1977A63 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				3AC5D9C5B838BE747D0154460D02F926 /* Foundation.framework */,
-				BACC64101FAE4862F8806DB02FC71B0E /* QuartzCore.framework */,
-			);
-			name = iOS;
+			name = Pod;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		D948CCA2EBC3A030B116FB8313EAD0E4 /* Headers */ = {
+		8887FF137BD8AAB4E29B062716CBD971 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15C2EFF2E2D08CED8EABBA01E8CD19A8 /* AXRatingView-umbrella.h in Headers */,
-				B48755A2C69F34BCB171A7A0311F3BD0 /* AXRatingView.h in Headers */,
+				ECEA52FBF56F6EF909D2BC5399823807 /* AXRatingView-umbrella.h in Headers */,
+				53559F775062A8C859C8611EFEB2EE9D /* AXRatingView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,9 +212,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42A91F98E91399305361B213AF7E3F80 /* Build configuration list for PBXNativeTarget "AXRatingView" */;
 			buildPhases = (
-				F7BA8165AC93C22B8C643FF774963B1C /* Sources */,
+				7DED19F4AEC3E37EBAC81F6360A7C8AE /* Sources */,
 				3CEF9432B08710345EC7F9052A27E621 /* Frameworks */,
-				D948CCA2EBC3A030B116FB8313EAD0E4 /* Headers */,
+				8887FF137BD8AAB4E29B062716CBD971 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -244,8 +249,8 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0700;
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -274,12 +279,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F7BA8165AC93C22B8C643FF774963B1C /* Sources */ = {
+		7DED19F4AEC3E37EBAC81F6360A7C8AE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F136363572C81C5D0A7AAAA1CD2202D2 /* AXRatingView-dummy.m in Sources */,
-				8D2730B60743749AE19F4224750CE616 /* AXRatingView.m in Sources */,
+				D647CE40A7FEEC3A7882687E39026DF9 /* AXRatingView-dummy.m in Sources */,
+				C85392900243D6EC300BCBA0D7F1CAED /* AXRatingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,72 +300,176 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		4F68BE83F1F24027B4186D61B5769764 /* Debug */ = {
+		2AEB67E6CF1791C5E0576D8B2C5DABC8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		5AAA11A10A7B231C2DBD502DB953E499 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6076AC68F32452F59ECA4B6FF63F74F /* AXRatingView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AXRatingView/AXRatingView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AXRatingView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AXRatingView/AXRatingView.modulemap";
+				PRODUCT_NAME = AXRatingView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5B29C32647C77AF8D9E2B5CB80B01B63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_DEBUG=1",
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		83B3E3BED7E55AA15A2D243E80F3676C /* Release */ = {
+		81E53FF7823923AA957A166653F889FA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C5D39AB54FAD635DBBAD2BB0AACC736C /* Pods-AXRatingViewDemo.release.xcconfig */;
+			baseConfigurationReference = 20A3F393E688299C3838AEAA9B00E867 /* Pods-AXRatingViewDemo.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-AXRatingViewDemo/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-AXRatingViewDemo/Pods-AXRatingViewDemo.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -369,147 +478,74 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		A66A9FCD4F00B55F3BDCC4368083DB36 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D8BE87C6D5D65427F1586759351670D /* AXRatingView.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AXRatingView/AXRatingView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AXRatingView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/AXRatingView/AXRatingView.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = AXRatingView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		B85D31C8613ED68E3A2608CE1E3DA85C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8631FCF16C4EAA88855F2E85BA1BCC3 /* Pods-AXRatingViewDemo.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-AXRatingViewDemo/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-AXRatingViewDemo/Pods-AXRatingViewDemo.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_AXRatingViewDemo;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		E982A3281261DBFD6DC7DE9CBA272264 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		F95336B981EBD761C58736A63BE1E32C /* Release */ = {
+		C11A0886B57D8B9680A3F602653637E1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D8BE87C6D5D65427F1586759351670D /* AXRatingView.xcconfig */;
+			baseConfigurationReference = D6076AC68F32452F59ECA4B6FF63F74F /* AXRatingView.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/AXRatingView/AXRatingView-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/AXRatingView/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/AXRatingView/AXRatingView.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = AXRatingView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D9640C586D809060A23C73C3C8E35062 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42AD87A60885FC5DD7250B7D02D6163E /* Pods-AXRatingViewDemo.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-AXRatingViewDemo/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AXRatingViewDemo/Pods-AXRatingViewDemo.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_AXRatingViewDemo;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
@@ -517,8 +553,8 @@
 		0A3BEFDA9DEE2325997B444A07E72E04 /* Build configuration list for PBXNativeTarget "Pods-AXRatingViewDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B85D31C8613ED68E3A2608CE1E3DA85C /* Debug */,
-				83B3E3BED7E55AA15A2D243E80F3676C /* Release */,
+				D9640C586D809060A23C73C3C8E35062 /* Debug */,
+				81E53FF7823923AA957A166653F889FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -526,8 +562,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4F68BE83F1F24027B4186D61B5769764 /* Debug */,
-				E982A3281261DBFD6DC7DE9CBA272264 /* Release */,
+				5B29C32647C77AF8D9E2B5CB80B01B63 /* Debug */,
+				2AEB67E6CF1791C5E0576D8B2C5DABC8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -535,8 +571,8 @@
 		42A91F98E91399305361B213AF7E3F80 /* Build configuration list for PBXNativeTarget "AXRatingView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A66A9FCD4F00B55F3BDCC4368083DB36 /* Debug */,
-				F95336B981EBD761C58736A63BE1E32C /* Release */,
+				5AAA11A10A7B231C2DBD502DB953E499 /* Debug */,
+				C11A0886B57D8B9680A3F602653637E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

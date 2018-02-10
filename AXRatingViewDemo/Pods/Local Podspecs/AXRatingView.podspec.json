@@ -1,23 +1,26 @@
 {
   "name": "AXRatingView",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "summary": "Star mark rating view",
-  "description": "Star mark rating view for a review scene.\n- Smooth rating (ex. 4.22 -> 4.23)\n- Step rating by 1.0 (ex. 3.00 -> 4.00)\n- Step rating by 0.5 (ex. 3.00 -> 3.50 -> 4.00)\n- Set other unicode character (not star character)\n- Set image\n- Set color\n- Editable & Not Editable\n- Easy to Get/Set.\n- Compatibility for iOS6, iOS7, iOS8",
+  "description": "Star mark rating view for a review scene.\n- Smooth rating (ex. 4.22 -> 4.23)\n- Step rating by 1.0 (ex. 3.00 -> 4.00)\n- Step rating by 0.5 (ex. 3.00 -> 3.50 -> 4.00)\n- Set other unicode character (not star character)\n- Set image\n- Set color\n- Editable & Not Editable\n- Easy to Get/Set.\n- Compatibility for iOS8, iOS9, iOS10\n- Support Auto Layout",
   "homepage": "https://github.com/akiroom/AXRatingView",
-  "screenshots": "https://raw.github.com/akiroom/AXRatingView/master/AXRatingViewDemo/Screenshot.png",
+  "screenshots": [
+    "https://raw.github.com/akiroom/AXRatingView/master/AXRatingViewDemo/Screenshot.png",
+    "https://raw.github.com/akiroom/AXRatingView/master/AXRatingViewDemo/Screenshot-Storyboard.png"
+  ],
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "Hiroki Akiyama": "aki-hiroki@nifty.com"
+    "akiroom": "akiyama@akiroom.com"
   },
   "platforms": {
     "ios": null
   },
   "source": {
     "git": "https://github.com/akiroom/AXRatingView.git",
-    "tag": "1.0.4"
+    "tag": "1.0.6"
   },
   "source_files": [
     "AXRatingView",
