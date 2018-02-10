@@ -26,7 +26,7 @@
   };
   __block NSUInteger positionCounter = 0;
   
-  CGRect (^nextFrame)() = ^CGRect() {
+  CGRect (^nextFrame)(void) = ^CGRect() {
     return CGRectOffset(componentBounds, 0.0, padding * positionCounter++);
   };
 
