@@ -7,6 +7,7 @@
 IB_DESIGNABLE
 @interface AXRatingView : UIControl {
   CALayer *_starMaskLayer;
+  CALayer *_basementLayer;
   CALayer *_highlightLayer;
   UIImage *_markImage;
 }

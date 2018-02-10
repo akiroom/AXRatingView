@@ -1,16 +1,16 @@
 PODS:
-  - AXRatingView (1.0.4)
+  - AXRatingView (1.0.6)
 
 DEPENDENCIES:
   - AXRatingView (from `..`)
 
 EXTERNAL SOURCES:
   AXRatingView:
-    :path: ".."
+    :path: ..
 
 SPEC CHECKSUMS:
-  AXRatingView: 6c8fa5836cf39abc369c9346e952283d1c9e5c73
+  AXRatingView: 3ce5b4bdb048b763563306ac7caef4f7f9bc597c
 
 PODFILE CHECKSUM: 6ff6613b16c788ed69144312534d272cea393a2a
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.4.0
