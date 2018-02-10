@@ -1,6 +1,10 @@
 CHANGELOG
 ---------
 
+## Master Branch
+
+- Fix the bug in UITableViewCell occurs by the spec. #23
+
 ## 1.0.6
 
 - Stop hard coding the screen resolution.
