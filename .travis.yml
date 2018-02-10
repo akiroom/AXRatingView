@@ -4,5 +4,5 @@ osx_image: xcode9.2
 script:
   - cd ./AXRatingViewDemo/
   - pod install
-  - xcodebuild test -scheme AXRatingViewDemo -configuration Debug -destination 'platform=iOS Simulator,OS=11.2,name=iPhone 8 Plus' | bundle exec xcpretty -c
+  - xcodebuild test -workspace AXRatingViewDemo.xcworkspace -scheme AXRatingViewDemo -configuration Debug -destination 'platform=iOS Simulator,OS=11.2,name=iPhone 8 Plus' | bundle exec xcpretty -c
 
